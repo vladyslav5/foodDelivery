@@ -1,8 +1,8 @@
 import React from 'react';
-
+import "./styles.css"
 const App = () => {
     return (
-        <div>
+        <div className={"bg-red-100"}>
             hellp
         </div>
     );
