@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
     "target": "es2016",
-    "module": "commonjs",
+    "moduleResolution": "node",
+    "module": "CommonJS",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
   }
 }
 

@@ -1,39 +1,26 @@
 import {Configuration} from "webpack"
-import {CleanWebpackPlugin} from "clean-webpack-plugin"
-import HtmlWebpackPlugin from "html-webpack-plugin"
-import path from "path"
 import 'webpack-dev-server';
+import {buildWebpackConfig} from "./config/webpack/build/buildWebpackConfig";
+import {BuildEnv, BuildPaths} from "./config/webpack/build/types/config";
+import path from "path";
 
-const config: Configuration = {
-    mode: "development",
-    entry: ["@babel/polyfill", path.resolve(__dirname, "src", "index.tsx")],
-    output: {
-        path: path.resolve(__dirname, "dist"),
-        filename: "[name].[contenthash].js"
-    },
-    resolve: {
-        extensions: [".ts", ".tsx", ".js", ".ts"]
-    },
-    plugins: [
-        new HtmlWebpackPlugin({template: "src/index.html"}),
-        new CleanWebpackPlugin(),
-    ],
-    devServer: {
-        hot: true,
-        port: 3000
-    },
-    module: {
-        rules: [
-            {
-                test: /\.(tsx|ts)$/,
-                use: "babel-loader",
-                exclude: /node_modules/
-            },
-            {
-                test: /\.(css)$/,
-                use: ["style-loader", "css-loader", "postcss-loader"]
-            }
-        ]
+
+export default (env:BuildEnv) => {
+
+    const paths: BuildPaths = {
+        build: path.resolve(__dirname, "dist"),
+        entry: ["@babel/polyfill", path.resolve(__dirname, "src", "index.tsx")],
+        html: path.resolve(__dirname, "src", "index.html")
     }
-}
-export default config;
+    const mode = env.mode || "development"
+    const isDev = "development" === mode
+    const PORT = env.port || 3000
+    console.log(`mode - ${mode}`)
+    const config: Configuration = buildWebpackConfig({
+        mode,
+        paths,
+        isDev,
+        port: PORT
+    })
+    return config
+};
