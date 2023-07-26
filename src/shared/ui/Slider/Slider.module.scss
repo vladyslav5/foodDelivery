@@ -1,54 +1,57 @@
 .Slider{
-  position: relative;
-  width: 80px;
-  height: 40px;
+    position: relative;
+    width: 80px;
+    height: 40px;
 }
 
 label {
-  position: absolute;
-  width: 100%;
-  height: 40px;
-  background: #b4b4e8;
-  border-radius: 40px;
-  cursor: pointer;
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    background: #b4b4e8;
+    border-radius: 40px;
+    cursor: pointer;
 }
 
 input {
-  display: none;
-  position: absolute;
+    display: none;
+    position: absolute;
 }
 
 .fon {
-  position: absolute;
-  width: 100%;
-  height: 40px;
-  border-radius: 40px;
-  transition: 0.3s;
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    transition: 0.3s;
 }
 
 
 
 .icon {
-  top: 5px;
-  left: 10px;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  border-radius: 50%;
-  transition: 0.3s;
+    top: 5px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    border-radius: 50%;
+    transition: 0.3s;
 }
+
 .icon:empty{
-  background: #030315;
+    background: #030315;
 }
 
 input:checked ~ .icon {
-  transform: translateX(30px);
+    transform: translateX(30px);
 }
+
 input:checked ~ .icon:empty {
-  transform: translateX(30px);
-  background: #9696d3;
+    transform: translateX(30px);
+    background: #9696d3;
 
 }
+
 input:checked ~ .fon {
-  background: #030315;
+    background: #030315;
 }
