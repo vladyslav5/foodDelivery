@@ -35,6 +35,7 @@ module.exports = {
 		'i18next'
 	],
 	'rules': {
+		'react/react-in-jsx-scope': 'off',
 		'no-unused-vars': 'off',
 		'@typescript-eslint/no-unused-vars':'off',
 		'indent': [

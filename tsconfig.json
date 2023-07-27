@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es2016",
     "moduleResolution": "node",
+    "resolveJsonModule": true,
     "module": "CommonJS",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -9,10 +10,16 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "*": ["./src/*"]
+      "*": [
+        "./src/*",
+      ]
     },
     "skipLibCheck": true,
     "jsx": "react-jsx"
-  }
+  },
+  "include": [
+    "./config/jest/setupTests.ts",
+    "src/**/*"
+  ]
 }
 

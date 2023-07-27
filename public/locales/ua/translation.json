@@ -5,5 +5,8 @@
   "About": "Про нас",
   "Main": "Головна",
   "names": "names",
-  "Toogle": "Toogle"
+  "Toogle": "Свернути",
+  "page not found for adress": "Cторінка не знейдена за адресою",
+  "There was an error": "Помилка",
+  "refresh": "оновити сторінку"
 }

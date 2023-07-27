@@ -25,7 +25,7 @@ export const ThemeSwitcher = ({className}: ThemeSwitcherProps) => {
 					/* Console.log(theme) */
 				}}>
 			{
-				isDark ? <Dark/> : <Light/>
+				isDark ? <Dark /> : <Light />
 			}
 		</Slider>
 	)
