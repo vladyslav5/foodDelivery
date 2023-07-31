@@ -1,10 +1,31 @@
 name: linting, testing, building
 
-on: [push]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
-  Explore-Github-Actions:
+  pipeline:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version:[18.x]
     steps:
-      - run: echo "echo"
-
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v1.4.3
+        with:
+        node-version: ${{ matrix.node }}
+      - name: Checkout master branch
+        uses: actions/checkout@v2
+      - name: npm install
+        run: npm install
+      - name: build production
+        run: npm run build:wp
+      - name: linting ts
+        run: npm run lint:ts
+      - name: linting css
+        run: npm run lint:scss
+      - name: unit tests
+        run: npm run test:unit
