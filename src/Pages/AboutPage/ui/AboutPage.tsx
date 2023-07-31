@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {useTranslation} from 'react-i18next'
 import Button from 'shared/ui/Button/Button'
-import {Slider} from 'shared/ui/Slider/Slider'
+import {SliderButton} from 'shared/ui/SliderButton/SliderButton'
 import cls from './AboutPage.module.scss'
 import {classNames} from 'shared/lib/helpers/classNames/classNames'
 
@@ -18,7 +18,7 @@ const AboutPage = () => {
 			}}>
                 bug
 			</Button>
-			<Slider className={classNames(cls.scaleSlider)} checked={f} setChecked={setF}/>
+			<SliderButton className={classNames(cls.scaleSlider)} checked={f} onClick={()=>setF(prevState => !prevState)}/>
 		</div>
 	)
 }

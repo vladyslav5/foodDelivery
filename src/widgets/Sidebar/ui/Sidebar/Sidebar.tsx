@@ -4,7 +4,7 @@ import cls from './Sidebar.module.scss'
 import Button, {ThemeButton} from 'shared/ui/Button/Button'
 import {LangSwitcher} from 'widgets/LangSwitcher'
 import {useTranslation} from 'react-i18next'
-
+import Dark from 'shared/assets/icons/Dark.svg'
 
 type SidebarProps = {
     className?: string;

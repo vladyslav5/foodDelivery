@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import {AppRoutes} from 'shared/config/routeConfig/routeConfig'
 import {classNames} from 'shared/lib/helpers/classNames/classNames'
 import cls from './Navbar.module.scss'
@@ -10,7 +10,7 @@ type NavBarProps = {
 	className?: string;
 };
 
-export const NavBar = ({className}: NavBarProps) => {
+export const Navbar = ({className}: NavBarProps) => {
 	const {t} = useTranslation()
 	return (
 		<div className={classNames(cls.Navbar, {}, [className!])}>

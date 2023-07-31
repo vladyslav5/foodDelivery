@@ -7,7 +7,7 @@
         position: absolute;
         width: 100%;
         height: 40px;
-        background: #b4b4e8;
+        background: var(--slider-light) ;
         border-radius: 40px;
         cursor: pointer;
     }
@@ -33,7 +33,7 @@
     }
 
     .icon:empty{
-        background: #030315;
+        background: var(--slider-dark);
     }
 
 
@@ -49,12 +49,12 @@
 
     input:checked ~ .icon:empty {
         transform: translateX(30px);
-        background: #9696d3;
+        background: var(--slider-light);
 
     }
 
     input:checked ~ .fon {
-        background: #030315;
+        background: var(--slider-dark);
     }
 }
 

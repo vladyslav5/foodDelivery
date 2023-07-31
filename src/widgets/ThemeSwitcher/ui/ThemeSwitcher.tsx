@@ -2,11 +2,11 @@ import React, {useState} from 'react'
 import {Theme, useTheme} from 'app/providers/ThemeProvider'
 import Light from 'shared/assets/icons/Light.svg'
 import Dark from 'shared/assets/icons/Dark.svg'
-import {Slider} from 'shared/ui/Slider/Slider'
+import {SliderButton} from 'shared/ui/SliderButton/SliderButton'
 import {classNames} from 'shared/lib/helpers/classNames/classNames'
 
 type ThemeSwitcherProps = {
-	className?: string;
+    className?: string;
 };
 
 export const ThemeSwitcher = ({className}: ThemeSwitcherProps) => {
@@ -15,18 +15,17 @@ export const ThemeSwitcher = ({className}: ThemeSwitcherProps) => {
 	const [checked, setChecked] = useState(isDark)
 
 	return (
-		<Slider
+		<SliderButton
 			className={classNames(' ', {}, [className!])}
 			checked={checked}
-			setChecked=
-				{checked => {
-					setChecked(checked)
-					toggleTheme()
-					/* Console.log(theme) */
-				}}>
-			{
-				isDark ? <Dark /> : <Light />
+			onClick={() => {
+				setChecked(prevState => !prevState)
+				toggleTheme()
 			}
-		</Slider>
+			}>
+			{
+				isDark ? <Dark/> : <Light/>
+			}
+		</SliderButton>
 	)
 }
