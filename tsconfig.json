@@ -18,7 +18,8 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "./config/**/*.ts",
+    "config/**/*.ts",
+    "config/**/*.tsx",
     "src/**/*.ts",
     "src/**/*.tsx"
   ]
