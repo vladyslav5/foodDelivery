@@ -21,5 +21,5 @@ export const Light: Story = {
 }
 export const Dark: Story = {
 	render: (args) => <Navbar {...args}/>,
-	decorators:[ThemeDecorator(Theme.DARK)]
+	decorators: [ThemeDecorator(Theme.DARK)]
 }

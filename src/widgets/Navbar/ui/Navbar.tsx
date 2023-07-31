@@ -1,4 +1,3 @@
-import React from 'react'
 import {AppRoutes} from 'shared/config/routeConfig/routeConfig'
 import {classNames} from 'shared/lib/helpers/classNames/classNames'
 import cls from './Navbar.module.scss'

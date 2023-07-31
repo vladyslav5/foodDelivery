@@ -2,7 +2,13 @@ module.exports = {
 	'env': {
 		'browser': true,
 		'es2021': true,
-		'jest': true
+		'jest': true,
+		'node':true
+	},
+	'settings':{
+		'react':{
+			'version':'detect'
+		}
 	},
 	'extends': ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
 	'overrides': [
