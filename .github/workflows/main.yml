@@ -33,9 +33,3 @@ jobs:
    #     run: npm run storybook:build
       - name: screenshot testing
         run: npm run test:ui:ci
-      - name: git checkout bug
-        run: git checkout bug
-      - name: add
-        run: git add .
-      - name: commit
-        run: git commit "bug"
