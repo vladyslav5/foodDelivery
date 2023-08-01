@@ -1,5 +1,4 @@
 import webpack from 'webpack'
-import {RuleSetRule} from 'webpack'
 import {BuildPaths} from '../webpack/build/types/config'
 import path from 'path'
 import {buildCssLoader} from '../webpack/build/loaders/buildCssLoader'
@@ -12,6 +11,7 @@ export default ({config}: { config: webpack.Configuration }) => {
 		entry:'',
 		src: path.resolve(__dirname,'..','..','src')
 	}
+	console.log(' mode ',config.mode)
 	config?.resolve?.modules?.push(paths.src)
 	config?.resolve?.extensions?.push('.ts','.tsx')
 	const imageRule = config.module?.rules?.find(rule => {
