@@ -1,5 +1,5 @@
 import type {Meta, StoryObj} from '@storybook/react'
-import Button, {ThemeButton} from './Button'
+import Button, {ButtonTheme} from './Button'
 import {ThemeDecorator} from 'shared/config/storybook/StyleDecorator/ThemeDecorator'
 import {Theme} from 'app/providers/ThemeProvider'
 
@@ -32,31 +32,75 @@ export const PrimaryDark: Story = {
 
 export const Clear: Story = {
 	args:{
-		theme:ThemeButton.CLEAR
+		theme:ButtonTheme.CLEAR
 	},
 	render: (args ) => <Button {...args}/>,
 
 }
 export const ClearDark: Story = {
 	args:{
-		theme:ThemeButton.CLEAR
+		theme:ButtonTheme.CLEAR
 	},
 	render: (args ) => <Button {...args}/>,
 	decorators: [ThemeDecorator(Theme.DARK)]
 }
 export const Outlined: Story = {
 	args:{
-		theme:ThemeButton.OUTLINE
+		theme:ButtonTheme.OUTLINE
 	},
 	render: (args ) => <Button {...args}/>,
 }
 export const OutlinedDark: Story = {
 	args:{
-		theme:ThemeButton.OUTLINE
+		theme:ButtonTheme.OUTLINE
+	},
+	render: (args ) => <Button {...args}/>,
+	decorators: [ThemeDecorator(Theme.DARK)]
+}
+export const Background: Story = {
+	args:{
+		theme:ButtonTheme.BACKGROUND
+	},
+	render: (args ) => <Button {...args}/>,
+}
+
+export const BackgroundDark: Story = {
+	args:{
+		theme:ButtonTheme.BACKGROUND
 	},
 	render: (args ) => <Button {...args}/>,
 	decorators: [ThemeDecorator(Theme.DARK)]
 }
 
 
+export const BackgroundInverted: Story = {
+	args:{
+		theme:ButtonTheme.BACKGROUND_INVERTED
+	},
+	render: (args ) => <Button {...args}/>,
+}
+
+export const BackgroundInvertedDark: Story = {
+	args:{
+		theme:ButtonTheme.BACKGROUND_INVERTED
+	},
+	render: (args ) => <Button {...args}/>,
+	decorators: [ThemeDecorator(Theme.DARK)]
+}
+export const Square: Story = {
+	args:{
+		square:true,
+		children:'<'
+	},
+	render: (args ) => <Button {...args}/>,
+}
+
+export const SquareDark: Story = {
+	args:{
+		square:true,
+		children:'<'
+	},
+	render: (args ) => <Button {...args}/>,
+	decorators: [ThemeDecorator(Theme.DARK)]
+}
 

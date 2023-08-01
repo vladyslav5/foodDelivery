@@ -5,8 +5,16 @@
     transition: width 0.3s;
     display:flex;
     flex-direction: column;
+    position: relative;
 }
 
 .collapsed{
     width: var(--sidebar-width-collapsed);
+}
+
+.collapseBnt{
+    font: var(--font-l);
+    position: absolute;
+    right: 0;
+    top:calc(100% / 2);
 }

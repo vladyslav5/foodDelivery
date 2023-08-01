@@ -1,12 +1,13 @@
 {
   "hello":"Добрий день",
   "translate": "Перевести",
-  "language": "EN",
+  "language": "English",
   "About": "Про нас",
   "Main": "Головна",
   "names": "names",
   "Toogle": "Свернути",
   "page not found for adress": "Cторінка не знейдена за адресою",
   "There was an error": "Помилка",
-  "refresh": "оновити сторінку"
+  "refresh": "оновити сторінку",
+  "lang": "EN"
 }

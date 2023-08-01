@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 import {classNames} from 'shared/lib/helpers/classNames/classNames'
 import cls from './Sidebar.module.scss'
-import Button, {ThemeButton} from 'shared/ui/Button/Button'
+import Button, {ButtonSize, ButtonTheme} from 'shared/ui/Button/Button'
 import {LangSwitcher} from 'widgets/LangSwitcher'
 import {useTranslation} from 'react-i18next'
-import Dark from 'shared/assets/icons/Dark.svg'
+
 
 type SidebarProps = {
     className?: string;
@@ -24,12 +24,13 @@ export const Sidebar = ({className}: SidebarProps) => {
 			}>
 			<Button
 				data-testid={'toggle'}
-				theme={ThemeButton.CLEAR}
+				theme={ButtonTheme.BACKGROUND}
 				onClick={onToggle}
+				className={cls.collapseBnt}
 			>
-				{t('Toogle')}
+				{collapsed ? '>' : '<'}
 			</Button>
-			<LangSwitcher/>
+			<LangSwitcher short={collapsed}/>
 		</div>
 	)
 }
