@@ -4,6 +4,8 @@ import cls from './Sidebar.module.scss'
 import Button, {ButtonSize, ButtonTheme} from 'shared/ui/Button/Button'
 import {LangSwitcher} from 'widgets/LangSwitcher'
 import {useTranslation} from 'react-i18next'
+import {Link} from 'react-router-dom'
+import {AppRoutes} from 'shared/config/routeConfig/routeConfig'
 
 
 type SidebarProps = {
@@ -31,6 +33,7 @@ export const Sidebar = ({className}: SidebarProps) => {
 				{collapsed ? '>' : '<'}
 			</Button>
 			<LangSwitcher short={collapsed}/>
+			<Link to={AppRoutes.main}>{'main'}</Link>
 		</div>
 	)
 }

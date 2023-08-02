@@ -1,6 +1,6 @@
 import {Meta, StoryObj} from '@storybook/react'
 import {Sidebar} from './Sidebar'
-import {ThemeDecorator} from 'shared/config/storybook/StyleDecorator/ThemeDecorator'
+import {ThemeDecorator} from 'shared/config/storybook/ThemeDecorator'
 import {Theme} from 'app/providers/ThemeProvider'
 
 const meta = {

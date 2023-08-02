@@ -15,7 +15,10 @@
     "test:ok": "npx loki approve",
     "test:ui:ci": "concurrently -s first -k \"npm run storybook\" \"npx loki --requireReference\"",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
-    "storybook:build": "storybook build -c ./config/storybook"
+    "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
+    "storybook:build": "storybook build -c ./config/storybook",
+    "test:ui:json": "node scripts/generate-visual-json-report.js",
+    "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html"
   },
   "keywords": [],
   "author": "",
@@ -62,6 +65,7 @@
     "jest": "^29.6.1",
     "jest-environment-jsdom": "^29.6.1",
     "mini-css-extract-plugin": "^2.7.6",
+    "reg-cli": "^0.17.7",
     "sass": "^1.63.6",
     "sass-loader": "^13.3.2",
     "storybook": "^7.1.1",
