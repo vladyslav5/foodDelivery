@@ -1,13 +1,10 @@
 import React, {useState} from 'react'
 import {classNames} from 'shared/lib/helpers/classNames/classNames'
 import cls from './Sidebar.module.scss'
-import Button, {ButtonSize, ButtonTheme} from 'shared/ui/Button/Button'
+import Button, {ButtonTheme} from 'shared/ui/Button/Button'
 import {LangSwitcher} from 'widgets/LangSwitcher'
 import {useTranslation} from 'react-i18next'
-import {Link} from 'react-router-dom'
-import {AppRoutes} from 'shared/config/routeConfig/routeConfig'
 import {ThemeSwitcher} from 'widgets/ThemeSwitcher'
-
 type SidebarProps = {
     className?: string;
 };
