@@ -8,7 +8,6 @@ import {classNames} from 'shared/lib/helpers/classNames/classNames'
 const AboutPage = () => {
 	const {t} = useTranslation('about')
 	const [f, setF] = useState(false)
-	console.log(cls.scaleSlider)
 	return (
 		<div>
 			{t('about us')}

@@ -4,10 +4,11 @@
   "language": "Ukrainian",
   "About": "About",
   "Main": "Main",
-  "names": "names",
+  "names": "FoodDelivery",
   "Toogle": "Toogle",
   "page not found for adress": "page not found for adress",
   "There was an error": "There was an error",
   "refresh": "refresh",
-  "lang": "UA"
+  "lang": "UA",
+  "auth": "auth"
 }

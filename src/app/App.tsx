@@ -1,10 +1,11 @@
-import React, {Suspense, useEffect} from 'react'
-import './styles/index.scss'
+import React, {Suspense, useState} from 'react'
 import {useTheme} from 'app/providers/ThemeProvider'
 import {classNames} from 'shared/lib/helpers/classNames/classNames'
 import {AppRouter} from 'app/providers/router'
 import {Navbar} from 'widgets/Navbar'
 import {Sidebar} from 'widgets/Sidebar'
+import {Modal} from 'shared/ui/Modal/Modal'
+import Button, {ButtonTheme} from 'shared/ui/Button/Button'
 
 const App = () => {
 	const {theme} = useTheme()

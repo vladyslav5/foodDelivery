@@ -6,7 +6,7 @@ import {LangSwitcher} from 'widgets/LangSwitcher'
 import {useTranslation} from 'react-i18next'
 import {Link} from 'react-router-dom'
 import {AppRoutes} from 'shared/config/routeConfig/routeConfig'
-
+import {ThemeSwitcher} from 'widgets/ThemeSwitcher'
 
 type SidebarProps = {
     className?: string;
@@ -24,6 +24,7 @@ export const Sidebar = ({className}: SidebarProps) => {
 			className={classNames(cls.Sidebar, {[cls.collapsed]: collapsed},
 				[className!])
 			}>
+			<ThemeSwitcher className={cls.themeSwitcher}/>
 			<Button
 				data-testid={'toggle'}
 				theme={ButtonTheme.BACKGROUND}
@@ -32,8 +33,8 @@ export const Sidebar = ({className}: SidebarProps) => {
 			>
 				{collapsed ? '>' : '<'}
 			</Button>
+
 			<LangSwitcher short={collapsed}/>
-			<Link to={AppRoutes.main}>{'main'}</Link>
 		</div>
 	)
 }

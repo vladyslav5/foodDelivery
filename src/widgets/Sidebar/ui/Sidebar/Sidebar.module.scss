@@ -6,6 +6,16 @@
     display:flex;
     flex-direction: column;
     position: relative;
+    align-items: center;
+}
+
+.logo{
+    color: var(--primary-color);
+
+}
+
+.themeSwitcher{
+    transform: scale(0.75);
 }
 
 .collapsed{
@@ -16,5 +26,5 @@
     font: var(--font-l);
     position: absolute;
     right: 0;
-    top:calc(100% / 2);
+    top:50%;
 }

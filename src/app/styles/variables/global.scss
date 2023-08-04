@@ -10,8 +10,10 @@
     --font-line-xl: 40px;
     --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
     --navbar-height: 50px;
-    --sidebar-width: 300px;
+    --sidebar-width: 150px;
     --sidebar-width-collapsed: 80px;
-    --slider-light: #b4b4e8;
-    --slider-dark: #030315;
+    --slider-light: #e5e5ee;
+    --slider-dark: #727272;
+    --modal-z-inex:10;
+    --overlay-color: rgb(0 0 0 / 70%);
 }

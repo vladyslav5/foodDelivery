@@ -6,7 +6,7 @@ import {BrowserRouter} from 'react-router-dom'
 import {ThemeProvider} from 'app/providers/ThemeProvider'
 import 'shared/config/i18n/i18n'
 import {ErrorBoundary} from 'app/ErrorBoundary'
-
+import 'app/styles/index.scss'
 
 const root = createRoot(document.getElementById('root')!)
 
@@ -19,5 +19,5 @@ root.render(
 			</ThemeProvider>
 		</BrowserRouter>
 	</ErrorBoundary>
-/*	</StrictMode>,*/
+/*	</StrictMode>*/
 )

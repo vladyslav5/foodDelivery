@@ -4,10 +4,11 @@
   "language": "English",
   "About": "Про нас",
   "Main": "Головна",
-  "names": "names",
+  "names": "ДоставкаІжі",
   "Toogle": "Свернути",
   "page not found for adress": "Cторінка не знейдена за адресою",
   "There was an error": "Помилка",
   "refresh": "оновити сторінку",
-  "lang": "EN"
+  "lang": "EN",
+  "auth": "auth"
 }

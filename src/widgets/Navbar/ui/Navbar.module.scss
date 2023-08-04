@@ -12,11 +12,19 @@
     margin-left: 15px;
 }
 
+.authBtn{
+    margin-left: 20px;
+}
+
 .mainLink {
     margin-right: 15px;
 }
 
 .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
     color: var(--inverted-secondary-color);
     margin-left: auto;
 }
