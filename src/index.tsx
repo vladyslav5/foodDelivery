@@ -7,17 +7,20 @@ import {ThemeProvider} from 'app/providers/ThemeProvider'
 import 'shared/config/i18n/i18n'
 import {ErrorBoundary} from 'app/ErrorBoundary'
 import 'app/styles/index.scss'
+import {StoreProvider} from 'app/providers/StoreProvider'
 
 const root = createRoot(document.getElementById('root')!)
 
 root.render(
 /*	<StrictMode>*/
 	<ErrorBoundary>
-		<BrowserRouter>
-			<ThemeProvider>
-				<App/>
-			</ThemeProvider>
-		</BrowserRouter>
+		<StoreProvider>
+			<BrowserRouter>
+				<ThemeProvider>
+					<App/>
+				</ThemeProvider>
+			</BrowserRouter>
+		</StoreProvider>
 	</ErrorBoundary>
 /*	</StrictMode>*/
 )

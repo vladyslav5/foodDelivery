@@ -2,7 +2,6 @@ import {classNames} from 'shared/lib/helpers/classNames/classNames'
 import cls from './Modal.module.scss'
 import {KeyboardEvent, ReactNode, useCallback, useEffect, useRef, useState} from 'react'
 import {Portal} from 'shared/ui/Portal/Portal'
-import {useTheme} from 'app/providers/ThemeProvider'
 
 interface ModalProps {
     children?: ReactNode,
@@ -51,9 +50,8 @@ export const Modal = (props: ModalProps) => {
 	const onContentClick = (e:MouseEvent)=>{
 		e.stopPropagation()
 	}
-	const {theme} = useTheme()
 	return (<Portal element={document.getElementById('portal') as HTMLElement}>
-		<div className={classNames('modal', mods, [theme!])}>
+		<div className={classNames(cls.Modal, mods )}>
 			<div className={cls.overlay} onClick={closeHandler}>
 				<div className={cls.content} onClick={onContentClick}>
 					{children}
