@@ -20,7 +20,7 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
 		use: {
 			loader:'babel-loader',
 			options: {
-				plugins: [isDev ? 'react-refresh/babel' : undefined]
+				plugins: isDev ? ['react-refresh/babel'] : []
 			}
 		},
 		exclude: /node_modules/,
