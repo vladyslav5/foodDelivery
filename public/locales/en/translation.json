@@ -10,5 +10,8 @@
   "There was an error": "There was an error",
   "refresh": "refresh",
   "lang": "UA",
-  "auth": "auth"
+  "auth": "auth",
+  "log in": "log in",
+  "username": "username",
+  "password": "password"
 }

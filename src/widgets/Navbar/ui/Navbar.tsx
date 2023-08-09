@@ -8,6 +8,7 @@ import React, {useState} from 'react'
 import {Modal} from 'shared/ui/Modal/Modal'
 import Button, {ButtonTheme} from 'shared/ui/Button/Button'
 import Logo from 'shared/assets/icons/logo.svg'
+import {LoginModal} from 'features/AuthByUserName'
 type NavBarProps = {
 	className?: string;
 };
@@ -15,18 +16,22 @@ type NavBarProps = {
 export const Navbar = ({className}: NavBarProps) => {
 	const {t} = useTranslation()
 	const [isOpen,setIsOpen] = useState(false)
+	const hideModal = ()=>{
+		setIsOpen(false)
+	}
+	const showModal = ()=>{
+		setIsOpen(true)
+	}
 	return (
 		<div className={classNames(cls.Navbar, {}, [className!])}>
-			<Modal isOpen={isOpen} onClose={()=>setIsOpen(false)}>
-				{'contetn'}
-			</Modal>
+			<LoginModal isOpen={isOpen} onClose={hideModal}/>
 			<div className={cls.links}>
 				<AppLink theme={AppLinkTheme.SECONDARY} to={AppRoutes.main} className={cls.mainLink}>{t('Main')}</AppLink>
 				<AppLink theme={AppLinkTheme.SECONDARY} to={AppRoutes.about}>{t('About')}</AppLink>
 			</div>
 			<Button
 				className={cls.authBtn}
-				onClick={()=>setIsOpen(true)}
+				onClick={showModal}
 				theme={ButtonTheme.CLEAR}
 			>
 				{t('auth')}

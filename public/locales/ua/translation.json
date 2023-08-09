@@ -10,5 +10,8 @@
   "There was an error": "Помилка",
   "refresh": "оновити сторінку",
   "lang": "EN",
-  "auth": "auth"
+  "auth": "Авторизація",
+  "log in": "Увійти",
+  "username": "нікнейм",
+  "password": "пароль"
 }
