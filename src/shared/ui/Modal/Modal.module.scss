@@ -1,7 +1,5 @@
 
 .Modal {
-    font: var(--font-m);
-    color: var(--primary-color);
     position: fixed;
     inset: 0;
     opacity: 1;
@@ -17,14 +15,6 @@
     justify-content: center;
     align-items: center;
 
-}
-
-.Modal {
-    position: fixed;
-    inset: 0;
-    opacity: 1;
-    pointer-events: none;
-    z-index: -1;
 }
 
 .content{
