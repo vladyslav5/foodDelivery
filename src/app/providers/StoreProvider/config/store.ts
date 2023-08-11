@@ -1,11 +1,15 @@
 import {combineReducers, configureStore} from '@reduxjs/toolkit'
 import {StateSchema} from 'app/providers/StoreProvider/config/StateSchema'
 import {userReducer} from 'entities/User'
+import {loginReducers} from 'features/AuthByUserName'
+
+
 
 
 
 const RootReducer = combineReducers<StateSchema>({
-	user:userReducer
+	user:userReducer,
+	loginForm:loginReducers
 })
 export function createReduxStore(initialState?:StateSchema) {
 	return configureStore({
@@ -14,4 +18,3 @@ export function createReduxStore(initialState?:StateSchema) {
 		preloadedState:initialState
 	})
 }
-

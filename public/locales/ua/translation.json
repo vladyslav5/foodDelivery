@@ -13,5 +13,7 @@
   "auth": "Авторизація",
   "log in": "Увійти",
   "username": "нікнейм",
-  "password": "пароль"
+  "password": "пароль",
+  "Incorrect password or username": "Неправильний пароль або ім'я користувача",
+  "log out": "log out"
 }

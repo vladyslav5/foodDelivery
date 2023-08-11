@@ -103,4 +103,17 @@ export const SquareDark: Story = {
 	render: (args ) => <Button {...args}/>,
 	decorators: [ThemeDecorator(Theme.DARK)]
 }
+export const Disabled: Story = {
+	args:{
+		disabled:true
+	},
+	render: (args ) => <Button {...args}/>,
+}
 
+export const DisabledDark: Story = {
+	args:{
+		disabled:true
+	},
+	render: (args ) => <Button {...args}/>,
+	decorators: [ThemeDecorator(Theme.DARK)]
+}

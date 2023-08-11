@@ -21,6 +21,7 @@ type ButtonProps = {
     children?: ReactNode;
     square?: boolean
     size?: ButtonSize
+	disabled?:boolean
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button: FC<ButtonProps> = props => {
@@ -30,6 +31,7 @@ const Button: FC<ButtonProps> = props => {
 		square = false,
 		theme,
 		size = ButtonSize.M,
+		disabled,
 		...otherProps
 	}
         = props
@@ -41,11 +43,12 @@ const Button: FC<ButtonProps> = props => {
 	]
 	const mods: Record<string, boolean> = {
 		[cls.square]: square,
-
+		[cls.disabled]:disabled!
 	}
 	return (
 		<button
 			className={classNames(cls.Button, mods, additional)}
+			disabled={disabled}
 			{...otherProps}
 		>
 			{children}

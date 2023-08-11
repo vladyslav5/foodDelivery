@@ -1,4 +1,9 @@
-.Loader {
+
+.Loader{
+    display: flex;
+}
+
+.span {
     width: 48px;
     height: 48px;
     background: var(--inverted-bg-color);
@@ -7,7 +12,7 @@
     animation: roll 1s ease-in-out infinite alternate;
 }
 
-.Loader::after{
+.span::after{
     content:"";
     position: absolute;
     inset: 5px;
@@ -23,5 +28,35 @@
 
     100% {
         transform:  translateX(150%) rotate(360deg);
+    }
+}
+
+.small{
+    @keyframes roll {
+        0% {
+            transform: /*translateX(-50%)*/ rotate(0deg) ;
+        }
+
+        100% {
+            transform:  /*translateX(50%)*/ rotate(360deg);
+        }
+    }
+
+    .span {
+        width: 15px;
+        height: 15px;
+        background: var(--inverted-bg-color);
+        border-radius: 50%;
+        position: relative;
+        animation: roll 1s ease-in-out infinite alternate;
+    }
+
+    .span::after{
+        content:"";
+        position: absolute;
+        inset: 2px;
+        border-radius: 50%;
+        border: 5px solid ;
+        border-color: var(--primary-color) transparent;
     }
 }

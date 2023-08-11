@@ -13,5 +13,7 @@
   "auth": "auth",
   "log in": "log in",
   "username": "username",
-  "password": "password"
+  "password": "password",
+  "Incorrect password or username": "Incorrect password or username",
+  "log out": "log out"
 }

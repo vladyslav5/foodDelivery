@@ -33,6 +33,7 @@ export const Input = memo((props: InputProps) => {
 		<input
 			{...othersProps}
 			value={value}
+			type={type}
 			onChange={onChangeHandler}
 			className={classNames(cls.Input, {}, [className!, cls[theme!]])}
 		/>

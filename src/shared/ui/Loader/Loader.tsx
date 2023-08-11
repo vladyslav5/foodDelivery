@@ -2,13 +2,31 @@ import React from 'react'
 import {classNames} from 'shared/lib/helpers/classNames/classNames'
 import cls from './Loader.module.scss'
 
-interface LoaderProps {
-    className?: string
+export enum LoaderTheme {
+    SMALL = 'small'
 }
 
-export const Loader = ({className}: LoaderProps) => {
+interface LoaderProps {
+    className?: string,
+    theme?: LoaderTheme
+}
+
+export const Loader = (props: LoaderProps) => {
+	const {
+		className,
+		theme
+	}
+        = props
+
+	const additional = [
+        className!,
+        cls[theme!]
+	]
 	return (
-		<span className={classNames(cls.Loader, {}, [className!])}>
-		</span>
+		<div className={classNames(cls.Loader, {}, additional)}>
+			<span className={cls.span}>
+			</span>
+		</div>
+
 	)
 }

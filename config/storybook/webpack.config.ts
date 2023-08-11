@@ -11,8 +11,8 @@ export default ({config}: { config: webpack.Configuration }) => {
 		entry:'',
 		src: path.resolve(__dirname,'..','..','src')
 	}
-	console.log(' mode ',config.mode)
-	config?.resolve?.modules?.push(paths.src)
+
+	config?.resolve?.modules?.unshift(paths.src)
 	config?.resolve?.extensions?.push('.ts','.tsx')
 	const imageRule = config.module?.rules?.find(rule => {
 		const test = (rule as { test: RegExp }).test
@@ -27,5 +27,8 @@ export default ({config}: { config: webpack.Configuration }) => {
 	config.module?.rules?.push(buildSvgLoader())
 	config.module?.rules?.push(buildCssLoader(true))
 
+	config.plugins?.push(new webpack.DefinePlugin({
+		__IS_DEV__: true,
+	}))
 	return config
 }

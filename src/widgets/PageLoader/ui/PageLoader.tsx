@@ -1,7 +1,7 @@
 import React from 'react'
-import {classNames} from 'shared/lib/helpers/classNames/classNames'
 import cls from './PageLoader.module.scss'
 import {Loader} from 'shared/ui/Loader/Loader'
+import {classNames} from 'shared/lib/helpers/classNames/classNames'
 
 interface PageLoaderProps {
     className?: string
@@ -9,8 +9,6 @@ interface PageLoaderProps {
 
 export const PageLoader = ({className}: PageLoaderProps) => {
 	return (
-		<div className={classNames(cls.PageLoader, {}, [className!])}>
-			<Loader/>
-		</div>
+		<Loader className={classNames(cls.PageLoader, {}, [className!])}/>
 	)
 }
