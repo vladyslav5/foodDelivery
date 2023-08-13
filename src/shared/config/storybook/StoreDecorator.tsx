@@ -7,7 +7,7 @@ import {DeepPartial} from '@reduxjs/toolkit'
 export const StoreDecorator = (initialState: DeepPartial<StateSchema>) => (Story: StoryFn) => {
 
 	return (
-		<StoreProvider initialState={initialState}>
+		<StoreProvider initialState={initialState as StateSchema}>
 			<Story/>
 		</StoreProvider>
 	)

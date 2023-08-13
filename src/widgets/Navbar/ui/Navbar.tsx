@@ -18,23 +18,27 @@ type NavBarProps = {
 
 export const Navbar = ({className}: NavBarProps) => {
 	const {t} = useTranslation()
-	const [isOpen,setIsOpen] = useState(false)
+	const [isAuthOpen,setIsAuthOpen] = useState(false)
 	const authData = useSelector(getUserAuthData)
 
 	const dispatch = useDispatch()
 
 	const hideModal = ()=>{
-		setIsOpen(false)
+		setIsAuthOpen(false)
 	}
 	const showModal = ()=>{
-		setIsOpen(true)
+		setIsAuthOpen(true)
 	}
 	const onLogout = useCallback(()=>{
 		dispatch(userActions.logout())
 	},[dispatch])
 	return (
 		<div className={classNames(cls.Navbar, {}, [className!])}>
-			<LoginModal isOpen={isOpen} onClose={hideModal}/>
+			{
+				isAuthOpen
+				&&
+				<LoginModal isOpen={isAuthOpen} onClose={hideModal}/>
+			}
 			<div className={cls.links}>
 				<AppLink theme={AppLinkTheme.SECONDARY} to={AppRoutes.main} className={cls.mainLink}>{t('Main')}</AppLink>
 				<AppLink theme={AppLinkTheme.SECONDARY} to={AppRoutes.about}>{t('About')}</AppLink>
