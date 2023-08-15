@@ -31,6 +31,7 @@ module.exports = {
 		'react-hooks'
 	],
 	'rules': {
+		'@typescript-eslint/ban-ts-comment':'off',
 		'react/display-name':'off',
 		'@typescript-eslint/no-explicit-any':'off',
 		'react/react-in-jsx-scope': 'off',
