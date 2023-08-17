@@ -4,18 +4,21 @@
  */
 
 import type {Config} from 'jest'
-import * as path from 'path'
+import path from 'path'
 
 const config: Config = {
 	clearMocks: true,
 	testEnvironment: 'jsdom',
 	rootDir: '../../',
 	coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
-	moduleDirectories: ['node_modules'],
+	moduleDirectories: ['node_modules',],
 	testMatch: [
 		'<rootDir>src/**/*/*(*.)+(spec|test).[jt]s?(x)'
 	],
 	setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
+	// roots:[
+	// 	'<rootDir>'
+	// ],
 	modulePaths: ['<rootDir>src'],
 	moduleFileExtensions: [
 		'js',

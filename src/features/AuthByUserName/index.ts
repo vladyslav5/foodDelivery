@@ -5,5 +5,5 @@ export type{
 	LoginSchema
 }
 export {
-	LoginModal
+	LoginModal,
 }

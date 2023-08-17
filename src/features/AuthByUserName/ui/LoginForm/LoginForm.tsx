@@ -11,10 +11,10 @@ import {Text, TextTheme} from 'shared/ui/Text/Text'
 import type {} from 'redux-thunk/extend-redux'
 
 import {LoadingButton} from 'widgets/LoadingButton/ui/LoadingButton'
-import {getLoginUsername} from '../../model/selectors/getLoginState/getLoginUsername'
-import {getLoginPassword} from '../../model/selectors/getLoginState/getLoginPassword'
-import {getLoginError} from '../../model/selectors/getLoginState/getLoginError'
-import {getLoginIsLoading} from '../../model/selectors/getLoginState/getLoginIsLoading'
+import {getLoginUsername} from '../../model/selectors/getLoginState/getLoginUsername/getLoginUsername'
+import {getLoginPassword} from '../../model/selectors/getLoginState/getLoginPassword/getLoginPassword'
+import {getLoginError} from '../../model/selectors/getLoginState/getLoginError/getLoginError'
+import {getLoginIsLoading} from '../../model/selectors/getLoginState/getLoginIsLoading/getLoginIsLoading'
 import {DynamicModuleLoader, ReducerList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 
 
