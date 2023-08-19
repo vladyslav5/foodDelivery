@@ -24,5 +24,5 @@ export const UserSlice = createSlice({
 	}
 })
 
-export const {actions:userActions} = UserSlice
+export const {actions:userAction} = UserSlice
 export const {reducer:userReducer} = UserSlice

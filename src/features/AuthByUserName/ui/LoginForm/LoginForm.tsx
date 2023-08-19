@@ -4,7 +4,7 @@ import cls from './LoginForm.module.scss'
 import {useTranslation} from 'react-i18next'
 import {Input, InputTheme} from 'shared/ui/Input/Input'
 import {useDispatch, useSelector, useStore} from 'react-redux'
-import {loginAction, loginReducer} from '../../model/slice/loginSlice'
+import {loginActions, loginReducer} from '../../model/slice/loginSlice'
 import {loginByUsername} from '../../model/services/loginByUsername/loginByUsername'
 import {Text, TextTheme} from 'shared/ui/Text/Text'
 
@@ -37,10 +37,10 @@ const LoginForm = memo(({className}: LoginFormProps) => {
 
 
 	const onChangeUsername = useCallback((value: string) => {
-		dispatch(loginAction.setUsername(value))
+		dispatch(loginActions.setUsername(value))
 	}, [dispatch])
 	const onChangePassword = useCallback((value: string) => {
-		dispatch(loginAction.setPassword(value))
+		dispatch(loginActions.setPassword(value))
 	}, [dispatch])
 	const onLoginClick = useCallback(() => {
 		dispatch(loginByUsername({password, username}))

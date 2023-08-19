@@ -7,7 +7,7 @@ import React, {useCallback, useState} from 'react'
 import Button, {ButtonTheme} from 'shared/ui/Button/Button'
 import Logo from 'shared/assets/icons/logo.svg'
 import {LoginModal} from 'features/AuthByUserName'
-import {getUserAuthData, userActions} from 'entities/User'
+import {getUserAuthData, userAction} from 'entities/User'
 import {useDispatch, useSelector} from 'react-redux'
 
 
@@ -30,7 +30,7 @@ export const Navbar = ({className}: NavBarProps) => {
 		setIsAuthOpen(true)
 	}
 	const onLogout = useCallback(()=>{
-		dispatch(userActions.logout())
+		dispatch(userAction.logout())
 	},[dispatch])
 	return (
 		<div className={classNames(cls.Navbar, {}, [className!])}>

@@ -1,15 +1,12 @@
 import type {User,UserSchema} from './model/types/user'
-import {userActions,userReducer} from './model/slice/UserSlice'
+import {userAction,userReducer} from './model/slice/userSlice'
 import {getUserAuthData} from './model/selectors/getUserAuthData'
-//
-// export type {
-//
-// }
 
 export {
-	// getUserAuthData,
-	userActions,
+	getUserAuthData,
+	userAction,
 	userReducer,
-/*	User,UserSchema*/
+	User,
+	UserSchema
 }
 

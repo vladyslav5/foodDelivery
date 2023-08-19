@@ -7,19 +7,19 @@ import type {Config} from 'jest'
 import path from 'path'
 
 const config: Config = {
+	globals:{
+		__IS_DEV__:true
+	},
 	clearMocks: true,
 	testEnvironment: 'jsdom',
 	rootDir: '../../',
 	coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
-	moduleDirectories: ['node_modules',],
+	// moduleDirectories: ['<rootDir>/node_modules'],
 	testMatch: [
 		'<rootDir>src/**/*/*(*.)+(spec|test).[jt]s?(x)'
 	],
 	setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
-	// roots:[
-	// 	'<rootDir>'
-	// ],
-	modulePaths: ['<rootDir>src'],
+	modulePaths: ['<rootDir>src','node_modules'],
 	moduleFileExtensions: [
 		'js',
 		'mjs',
@@ -32,7 +32,8 @@ const config: Config = {
 	],
 	moduleNameMapper: {
 		'\\.s?css$': 'identity-obj-proxy',
-		'\\.svg$': path.resolve(__dirname, 'jestEmptyComponent.tsx')
+		'\\.svg$': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+		'^entities/(.*)$': '<rootDir>/src/entities/$1',
 	},
 
 	// Indicates whether the coverage information should be collected while executing the test
