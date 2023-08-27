@@ -1,5 +1,4 @@
 import {ReactNode, useEffect} from 'react'
-import {loginReducer} from 'features/AuthByUserName/model/slice/loginSlice'
 import {useStore} from 'react-redux'
 import {ReduxStoreWithManager} from 'app/providers/StoreProvider'
 import {Reducer} from '@reduxjs/toolkit'
@@ -24,14 +23,14 @@ export const DynamicModuleLoader = (props: DynamicModuleLoaderProps) => {
 	const store = useStore() as ReduxStoreWithManager
 	// const dispatch = useDispatch()
 	useEffect(() => {
-		Object.entries(reducers).forEach(([name,reducer]:ReducersListEntry)=>{
-			store.reducerManager.add(name, reducer)
+		Object.entries(reducers).forEach(([name,reducer])=>{
+			store?.reducerManager?.add(name as StateSchemaKey, reducer)
 		})
 
 		return () => {
 			if (removeAfterUnmount) {
-				Object.entries(reducers).forEach(([name,]:ReducersListEntry)=>{
-					store.reducerManager.remove(name)
+				Object.entries(reducers).forEach(([name,])=>{
+					store?.reducerManager?.remove(name as StateSchemaKey)
 				})
 			}
 		}

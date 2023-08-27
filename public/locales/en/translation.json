@@ -15,5 +15,6 @@
   "username": "username",
   "password": "password",
   "Incorrect password or username": "Incorrect password or username",
-  "log out": "log out"
+  "log out": "log out",
+  "Profile": "Profile"
 }

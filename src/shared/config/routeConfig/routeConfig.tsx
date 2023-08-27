@@ -2,6 +2,7 @@ import React from 'react'
 import {MainPage} from 'Pages/MainPage'
 import {AboutPage} from 'Pages/AboutPage'
 import {NotFoundPage} from 'Pages/NotFoundPage'
+import {ProfilePage} from 'Pages/ProfilePage'
 
 export type RouteConfig = {
 	path: string;
@@ -11,7 +12,8 @@ export type RouteConfig = {
 export enum AppRoutes {
 	main = '/',
 	about = '/about',
-	notFound = '*'
+	notFound = '*',
+	profile='/profile'
 }
 
 export const publicRoutes: RouteConfig[] = [
@@ -26,7 +28,12 @@ export const publicRoutes: RouteConfig[] = [
 	{
 		path:AppRoutes.notFound,
 		element:<NotFoundPage/>
-	}
+	},
+	{
+		path:AppRoutes.profile,
+		element:<ProfilePage/>
+	},
+
 ]
 
 export const authRoutes: RouteConfig[] = []

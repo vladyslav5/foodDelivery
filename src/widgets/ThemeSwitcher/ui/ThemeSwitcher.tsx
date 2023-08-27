@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {memo, useState} from 'react'
 import {Theme, useTheme} from 'app/providers/ThemeProvider'
 import Light from 'shared/assets/icons/Light.svg'
 import Dark from 'shared/assets/icons/Dark.svg'
@@ -9,7 +9,7 @@ type ThemeSwitcherProps = {
     className?: string;
 };
 
-export const ThemeSwitcher = ({className}: ThemeSwitcherProps) => {
+export const ThemeSwitcher = memo(({className}: ThemeSwitcherProps) => {
 	const {toggleTheme, theme} = useTheme()
 	const isDark = theme === Theme.DARK
 	const [checked, setChecked] = useState(isDark)
@@ -28,4 +28,4 @@ export const ThemeSwitcher = ({className}: ThemeSwitcherProps) => {
 			}
 		</SliderButton>
 	)
-}
+})

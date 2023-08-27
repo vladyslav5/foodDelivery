@@ -15,5 +15,6 @@
   "username": "нікнейм",
   "password": "пароль",
   "Incorrect password or username": "Неправильний пароль або ім'я користувача",
-  "log out": "log out"
+  "log out": "log out",
+  "Profile": "Profile"
 }

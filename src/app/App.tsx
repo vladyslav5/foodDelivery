@@ -7,8 +7,12 @@ import {useDispatch} from 'react-redux'
 import {userAction} from 'entities/User'
 
 
+
 const App = () => {
 	const dispatch = useDispatch()
+
+
+
 	useEffect(()=>{
 		dispatch(userAction.initAuthData())
 	},[dispatch])

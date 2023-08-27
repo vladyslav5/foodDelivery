@@ -8,7 +8,10 @@ import {StoreDecorator} from 'shared/config/storybook/StoreDecorator'
 const meta = {
 	title: 'features/LoginForm',
 	component: LoginForm,
-	tags: ['autodocs']
+	tags: ['autodocs'],
+	args:{
+		onSuccess: ()=>{}
+	}
 
 } satisfies Meta<typeof LoginForm>
 
@@ -24,7 +27,7 @@ export const Light: Story = {
 			password:'pass'
 		}
 	})],
-	render: () => <LoginForm />,
+	render: (args) => <LoginForm {...args}/>,
 }
 export const Dark: Story = {
 	decorators:[StoreDecorator({
@@ -34,7 +37,7 @@ export const Dark: Story = {
 		}
 	}),
 	ThemeDecorator(Theme.DARK)],
-	render: () => <LoginForm/>,
+	render: (args) => <LoginForm {...args}/>,
 }
 export const WithErrorLight: Story = {
 	decorators:[StoreDecorator({
@@ -44,7 +47,7 @@ export const WithErrorLight: Story = {
 			error:'auth error'
 		}
 	})],
-	render: () => <LoginForm />,
+	render: (args) => <LoginForm {...args}/>,
 }
 export const WithErrorDark: Story = {
 	decorators:[StoreDecorator({
@@ -55,7 +58,7 @@ export const WithErrorDark: Story = {
 		}
 	}),
 	ThemeDecorator(Theme.DARK)],
-	render: () => <LoginForm/>,
+	render: (args) => <LoginForm {...args}/>,
 }
 export const LoadingLight: Story = {
 	decorators:[StoreDecorator({
@@ -65,7 +68,7 @@ export const LoadingLight: Story = {
 			isLoading:true
 		}
 	})],
-	render: () => <LoginForm />,
+	render: (args) => <LoginForm {...args}/>,
 }
 export const LoadingDark: Story = {
 	decorators:[StoreDecorator({
@@ -76,5 +79,5 @@ export const LoadingDark: Story = {
 		}
 	}),
 	ThemeDecorator(Theme.DARK)],
-	render: () => <LoginForm/>,
+	render: (args) => <LoginForm {...args}/>,
 }

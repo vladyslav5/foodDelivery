@@ -1,9 +1,8 @@
-import {DeepPartial} from '@reduxjs/toolkit'
 import {StateSchema} from 'app/providers/StoreProvider/config/StateSchema'
 import {getLoginIsLoading} from './getLoginIsLoading'
 
 
-describe('getLoginIsLoading test',()=>{
+describe('getProfileIsLoading.ts test',()=>{
 	test('should isLoading',()=>{
 		const state:DeepPartial<StateSchema> ={
 			loginForm:{

@@ -10,7 +10,14 @@ module.exports = {
 			'version':'detect'
 		}
 	},
-	'extends': ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
+	'extends': [
+		'eslint:recommended',
+		'plugin:@typescript-eslint/recommended',
+		'plugin:react/recommended',
+		'plugin:i18next/recommended',
+		'plugin:storybook/recommended'
+	],
+
 	'overrides': [
 		{
 			'files': ['*.test.tsx', '*.stories.tsx'],
@@ -22,7 +29,10 @@ module.exports = {
 	'parser': '@typescript-eslint/parser',
 	'parserOptions': {
 		'ecmaVersion': 'latest',
-		'sourceType': 'module'
+		'sourceType': 'module',
+		ecmaFeatures: {
+			jsx: true
+		}
 	},
 	'plugins': [
 		'@typescript-eslint',
@@ -48,6 +58,7 @@ module.exports = {
 		'react-hooks/exhaustive-deps': 'error'
 	},
 	globals: {
-		__IS_DEV__: true
+		__IS_DEV__: true,
+		__API__:true
 	}
 }

@@ -16,7 +16,7 @@
     "test:ok": "npx loki approve",
     "test:ui:ci": "concurrently -s first -k \"npm run storybook\" \"npx loki --requireReference\"",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
-    "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
+    "test:ui:report": "npm run test:ui:json && npm run test:ui:html && serve .loki -l 8000",
     "storybook:build": "storybook build -c ./config/storybook",
     "test:ui:json": "node scripts/generate-visual-json-report.js",
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html"

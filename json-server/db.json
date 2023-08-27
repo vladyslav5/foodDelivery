@@ -5,7 +5,11 @@
   "comments": [
     { "id": 1, "body": "some comment", "postId": 1 }
   ],
-  "profile": { "name": "typicode" },
+  "profile":  {
+    "username": "vasya",
+    "id": "1",
+    "avatar": "https://c4.wallpaperflare.com/wallpaper/979/475/578/armor-ruins-armor-knight-wallpaper-preview.jpg"
+  },
   "users": [
     {
       "username": "vasya",

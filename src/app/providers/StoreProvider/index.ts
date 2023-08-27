@@ -1,10 +1,12 @@
 import {StoreProvider} from './ui/StoreProvider'
-import {createReduxStore} from './config/store'
-import {ReduxStoreWithManager} from './config/StateSchema'
+import {createReduxStore,AppDispatch} from './config/store'
+import {ReduxStoreWithManager, ThunkExtraArg} from './config/StateSchema'
 export {
 	StoreProvider,
 	createReduxStore,
 }
 export type{
-	ReduxStoreWithManager
+	AppDispatch,
+	ReduxStoreWithManager,
+	ThunkExtraArg
 }
