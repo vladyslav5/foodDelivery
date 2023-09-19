@@ -34,6 +34,5 @@ describe('loginByUsername test', () => {
 		expect(thunk.api.post).toHaveBeenCalled()
 		expect(result.meta.requestStatus).toBe('rejected')
 		expect(result.payload).toBe('error')
-
 	})
 })

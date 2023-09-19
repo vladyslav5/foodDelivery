@@ -1,22 +1,42 @@
 .ProfileCard{
     padding: 20px;
     border: 2px solid var(--inverted-bg-color);
-
+    position: relative;
 }
 
-.header{
+.error {
+    background: var(--error-color)
+}
+
+.Loader{
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.editBtn{
-    //margin: auto;
+.errors{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+
+.error{
+    width: fit-content;
+    padding: 15px;
+    border: 1px solid red;
+    margin-bottom: 15px;
 }
 
 .data{
-    margin-top:30px ;
-
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-.input{
-    margin-top: 10px;
+.editing{
+    border: 2px dashed var(--primary-color);
+}
+
+.label{
+    margin: 5px 0;
 }

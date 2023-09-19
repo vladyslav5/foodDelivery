@@ -3,12 +3,12 @@ import {classNames} from 'shared/lib/helpers/classNames/classNames'
 import cls from './Navbar.module.scss'
 import {AppLink, AppLinkTheme} from 'shared/ui/AppLink/AppLink'
 import {useTranslation} from 'react-i18next'
-import React, {useCallback, useState} from 'react'
+import React, {useState} from 'react'
 import Button, {ButtonTheme} from 'shared/ui/Button/Button'
 import Logo from 'shared/assets/icons/logo.svg'
 import {LoginModal} from 'features/AuthByUserName'
-import {getUserAuthData, userAction} from 'entities/User'
-import {useDispatch, useSelector} from 'react-redux'
+import {getUserAuthData} from 'entities/User'
+import {useSelector} from 'react-redux'
 
 
 
@@ -20,18 +20,12 @@ export const Navbar = ({className}: NavBarProps) => {
 	const {t} = useTranslation()
 	const [isAuthOpen,setIsAuthOpen] = useState(false)
 	const authData = useSelector(getUserAuthData)
-
-	const dispatch = useDispatch()
-
 	const hideModal = ()=>{
 		setIsAuthOpen(false)
 	}
 	const showModal = ()=>{
 		setIsAuthOpen(true)
 	}
-	const onLogout = useCallback(()=>{
-		dispatch(userAction.logout())
-	},[dispatch])
 	return (
 		<div className={classNames(cls.Navbar, {}, [className!])}>
 			{
@@ -46,13 +40,7 @@ export const Navbar = ({className}: NavBarProps) => {
 			{
 				authData
 					?
-					<Button
-						className={cls.authBtn}
-						onClick={onLogout}
-						theme={ButtonTheme.CLEAR}
-					>
-						{t('log out')}
-					</Button>
+					<div></div>
 					:
 					<Button
 						className={cls.authBtn}
@@ -63,7 +51,7 @@ export const Navbar = ({className}: NavBarProps) => {
 					</Button>
 			}
 			<div className={cls.logo}>
-				<Logo className={cls.logo}/>
+				<Logo/>
 				{t('names')}
 			</div>
 		</div>

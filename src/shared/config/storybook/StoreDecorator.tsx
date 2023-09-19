@@ -5,7 +5,7 @@ import {loginReducer} from 'features/AuthByUserName/model/slice/loginSlice'
 import {profileReducer} from 'entities/Profile'
 import {ReducerList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 
-const defaultAsyncReducers:ReducerList ={
+export const defaultAsyncReducers:ReducerList ={
 	loginForm:loginReducer,
 	profile:profileReducer
 }

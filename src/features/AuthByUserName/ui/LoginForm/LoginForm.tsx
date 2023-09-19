@@ -21,10 +21,11 @@ import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 
 interface LoginFormProps {
     className?: string,
-	onSuccess:()=>void
+    onSuccess: () => void
 }
-const initialReducers:ReducerList = {
-	loginForm:loginReducer
+
+const initialReducers: ReducerList = {
+	loginForm: loginReducer
 }
 
 const LoginForm = memo((props: LoginFormProps) => {
@@ -33,7 +34,7 @@ const LoginForm = memo((props: LoginFormProps) => {
 		className,
 		onSuccess
 	}
-	= props
+        = props
 
 
 	const {t} = useTranslation()
@@ -44,8 +45,6 @@ const LoginForm = memo((props: LoginFormProps) => {
 	const isLoading = useSelector(getLoginIsLoading)
 
 
-
-
 	const onChangeUsername = useCallback((value: string) => {
 		dispatch(loginActions.setUsername(value))
 	}, [dispatch])
@@ -54,12 +53,12 @@ const LoginForm = memo((props: LoginFormProps) => {
 	}, [dispatch])
 	const onLoginClick = useCallback(async () => {
 		const result = await dispatch(loginByUsername({password, username}))
-		if(result.meta.requestStatus === 'fulfilled'){
+		if (result.meta.requestStatus === 'fulfilled') {
 			onSuccess()
 		}
 	}, [dispatch, onSuccess, password, username])
 	return (
-		<DynamicModuleLoader  reducers={initialReducers}>
+		<DynamicModuleLoader reducers={initialReducers}>
 			<>
 				<div className={classNames(cls.LoginForm, {}, [className!])}>
 					<Input

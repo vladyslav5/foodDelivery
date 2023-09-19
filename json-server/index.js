@@ -5,10 +5,17 @@ const router = jsonServer.router(path.resolve(__dirname, 'db.json'))
 const middlewares = jsonServer.defaults({})
 const fs = require('fs')
 const cors = require('cors')
+const multer = require('multer')
+const upload = multer({
+	dest:path.resolve(__dirname,'temp')
+})
+const uuid = require('uuid')
+const express = require('express')
 
 
 server.use(middlewares)
 server.use(jsonServer.bodyParser)
+server.use(express.static(path.join(__dirname,'static')))
 
 server.use(cors())
 server.use(async (req, res, next) => {
@@ -46,6 +53,25 @@ server.use((req, res, next) => {
 		return res.status(403).json({message: 'AUTH ERROR'})
 	}
 	next()
+})
+
+
+
+server.put('/profile',upload.single('avatar'),async (req,res)=>{
+	const avatar = req.file
+	const db = JSON.parse(fs.readFileSync(dbPath, 'UTF-8'))
+	if(avatar){
+		const fileName = uuid.v4() + '.jpg'
+		const tempPath = req.file.path
+		const targetPath = path.join(__dirname,'static',fileName)
+		await fs.rename(tempPath,targetPath,()=>{})
+		db.profile = {...db.profile,...req.body,avatar:fileName}
+	}else {
+		db.profile = {...db.profile,...req.body}
+	}
+	await fs.writeFile(dbPath,JSON.stringify(db),()=>{})
+	console.log(db.profile)
+	return res.status(200).json(db.profile)
 })
 
 server.use(router)

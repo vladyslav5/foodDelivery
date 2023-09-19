@@ -10,6 +10,8 @@ export const fetchProfileData = createAsyncThunk<Profile,void, {rejectValue:stri
 	async (_, {extra,rejectWithValue}) => {
 		try {
 			const response = await extra.api.get<Profile>('/profile')
+			// throw new Error()
+			response.data.avatar = __API__ + response.data.avatar
 			return response.data
 		}
 		catch (e:any){

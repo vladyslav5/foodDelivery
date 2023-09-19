@@ -13,16 +13,16 @@ export const ThemeSwitcher = memo(({className}: ThemeSwitcherProps) => {
 	const {toggleTheme, theme} = useTheme()
 	const isDark = theme === Theme.DARK
 	const [checked, setChecked] = useState(isDark)
-
+	const onSliderHandler = ()=>{
+		setChecked(prevState => !prevState)
+		toggleTheme()
+	}
 	return (
 		<SliderButton
 			className={classNames(' ', {}, [className!])}
 			checked={checked}
-			onClick={() => {
-				setChecked(prevState => !prevState)
-				toggleTheme()
-			}
-			}>
+			onClick={onSliderHandler}
+		>
 			{
 				isDark ? <Dark/> : <Light/>
 			}

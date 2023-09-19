@@ -4,7 +4,6 @@ import {componentRender} from 'shared/config/test/componentRender'
 
 
 
-
 describe('Sidebar', () => {
 	test('in document', () => {
 		componentRender(<Sidebar/>)

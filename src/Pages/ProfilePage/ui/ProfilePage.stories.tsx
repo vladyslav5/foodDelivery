@@ -3,6 +3,7 @@ import {ThemeDecorator} from 'shared/config/storybook/ThemeDecorator'
 import {Theme} from 'app/providers/ThemeProvider'
 import ProfilePage from './ProfilePage'
 import {StoreDecorator} from 'shared/config/storybook/StoreDecorator'
+import AvatarImg from 'shared/assets/AvatarImg.jpg'
 
 
 const meta = {
@@ -10,7 +11,17 @@ const meta = {
 	component: ProfilePage,
 	tags: ['autodocs'],
 	decorators:[
-		StoreDecorator({})
+		StoreDecorator({
+			profile:{
+				readonly:true,
+				form:{
+					avatar:AvatarImg,
+					firstName:'Jo',
+					lastName:'Doe',
+					username:'Jo123'
+				}
+			}
+		})
 	]
 
 } satisfies Meta<typeof ProfilePage>

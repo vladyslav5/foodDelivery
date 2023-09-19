@@ -7,6 +7,18 @@
     flex-direction: column;
     position: relative;
     align-items: center;
+    gap: 15px;
+}
+
+.item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.link{
+    margin-left: 10px;
 }
 
 .logo{
@@ -20,6 +32,11 @@
 
 .collapsed{
     width: var(--sidebar-width-collapsed);
+
+    .link{
+        display: none;
+    }
+
 }
 
 .collapseBnt{
@@ -27,4 +44,13 @@
     position: absolute;
     right: 0;
     top:50%;
+}
+
+.logout{
+    position: absolute;
+    bottom: 150px;
+}
+
+.icon{
+    color:var(--primary-color)
 }
