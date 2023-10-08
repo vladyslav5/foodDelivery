@@ -41,3 +41,21 @@ export const PrimaryDark: Story = {
 	render: (args) => <Input {...args}/>,
 	decorators:[ThemeDecorator(Theme.DARK)]
 }
+
+
+export const Squared: Story = {
+	args:{
+		squared:true,
+		theme:InputTheme.PRIMARY
+	},
+	render: (args) => <Input {...args}/>,
+}
+
+export const SquaredDark: Story = {
+	args:{
+		squared:true,
+		theme:InputTheme.PRIMARY
+	},
+	render: (args) => <Input {...args}/>,
+	decorators:[ThemeDecorator(Theme.DARK)]
+}

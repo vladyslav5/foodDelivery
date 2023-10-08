@@ -1,19 +1,22 @@
-import React from 'react'
-import {MainPage} from 'Pages/MainPage'
 import {AboutPage} from 'Pages/AboutPage'
 import {NotFoundPage} from 'Pages/NotFoundPage'
 import {ProfilePage} from 'Pages/ProfilePage'
+import {MainPage} from 'Pages/MainPage'
+import {ReactNode} from 'react'
+
 
 export type RouteConfig = {
 	path: string;
-	element: React.ReactNode;
+	element: ReactNode;
 };
 
 export enum AppRoutes {
-	main = '/',
 	about = '/about',
+	main = '/',
+
+	profile='/profile',
 	notFound = '*',
-	profile='/profile'
+
 }
 
 export const publicRoutes: RouteConfig[] = [

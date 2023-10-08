@@ -5,7 +5,7 @@ import Button, {ButtonTheme} from 'shared/ui/Button/Button'
 import {LangSwitcher} from 'widgets/LangSwitcher'
 import {useTranslation} from 'react-i18next'
 import {ThemeSwitcher} from 'widgets/ThemeSwitcher'
-import {AppLink, AppLinkTheme} from 'shared/ui/AppLink/AppLink'
+import {AppLink} from 'shared/ui/AppLink/AppLink'
 import {AppRoutes} from 'shared/config/routeConfig/routeConfig'
 import {getUserAuthData, userAction} from 'entities/User'
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
@@ -58,7 +58,6 @@ export const Sidebar = memo(({className}: SidebarProps) => {
 				>
 					{t('Profile')}
 				</span>
-
 			</AppLink>
 			{authData && <Button
 				className={classNames(cls.logout, {}, [cls.item])}

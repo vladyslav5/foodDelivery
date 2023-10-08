@@ -3,26 +3,29 @@ import cls from './Text.module.scss'
 
 export enum TextTheme {
     PRIMARY = 'primary',
-    ERROR = 'error'
-}
-export enum TextAlign{
-	RIGHT= 'right',
-	LEFT = 'left',
-	CENTER='center'
+    SECONDARY = 'secondary',
+	ERROR = 'error'
 }
 
-export enum TextSize{
-	L = 'size_l',
-	M = 'size_m',
-	XL = 'size_xl',
+export enum TextAlign {
+    RIGHT = 'right',
+    LEFT = 'left',
+    CENTER = 'center'
 }
+
+export enum TextSize {
+    L = 'size_l',
+    M = 'size_m',
+    XL = 'size_xl',
+}
+
 interface TextProps {
     className?: string,
     title?: string,
     text?: string,
     theme?: TextTheme,
-	align?:TextAlign
-	fontSize?:TextSize
+    align?: TextAlign
+    fontSize?: TextSize
 }
 
 export const Text = (props: TextProps) => {
@@ -37,10 +40,10 @@ export const Text = (props: TextProps) => {
         = props
 	const mods: Record<string, boolean> = {}
 	const additional = [
-		className,
 		cls[theme],
 		cls[fontSize],
-		cls[align]
+		cls[align],
+		className
 	]
 	return (
 		<div className={classNames(cls.Text, mods, additional)}>

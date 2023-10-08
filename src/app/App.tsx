@@ -10,14 +10,11 @@ import {userAction} from 'entities/User'
 
 const App = () => {
 	const dispatch = useDispatch()
-
-
-
 	useEffect(()=>{
 		dispatch(userAction.initAuthData())
 	},[dispatch])
 	return (
-		<div className={classNames('app', {}, )}>
+		<div className={classNames('app')}>
 			<Suspense fallback=''>
 				<Navbar/>
 				<div className={'content-page'}>

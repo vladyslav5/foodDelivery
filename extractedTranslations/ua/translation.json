@@ -5,6 +5,7 @@
   "Edit": "Edit",
   "Incorrect password or username": "Incorrect password or username",
   "Main": "",
+  "Main page": "Main page",
   "Profile": "Profile",
   "There was an error": "",
   "Toogle": "",
@@ -21,5 +22,6 @@
   "page not found for adress": "",
   "password": "password",
   "refresh": "",
+  "total price": "total price",
   "username": "username"
 }

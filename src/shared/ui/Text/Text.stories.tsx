@@ -44,3 +44,16 @@ export const ErrorDark: Story = {
 	render: (args) => <Text {...args}/>,
 	decorators:[ThemeDecorator(Theme.DARK)]
 }
+export const SecondaryLight: Story = {
+	args:{
+		theme:TextTheme.SECONDARY,
+	},
+	render: (args) => <Text {...args}/>,
+}
+export const SecondaryDark: Story = {
+	args:{
+		theme:TextTheme.SECONDARY,
+	},
+	render: (args) => <Text {...args}/>,
+	decorators:[ThemeDecorator(Theme.DARK)]
+}

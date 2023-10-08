@@ -20,3 +20,4 @@ declare const __API__: string
 declare const __PROJECT__: 'storybook' | 'frontend' | 'jest'
 
 declare module '*.jpg';
+declare module '*.png'

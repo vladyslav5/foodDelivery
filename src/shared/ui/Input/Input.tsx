@@ -3,7 +3,8 @@ import {ChangeEvent, InputHTMLAttributes, memo} from 'react'
 import {classNames, Mods} from 'shared/lib/helpers/classNames/classNames'
 
 export enum InputTheme {
-    PRIMARY = 'primary'
+    PRIMARY = 'primary',
+	PRIMARY_INVERTED = 'primaryInverted'
 }
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'| 'readOnly'>
@@ -11,7 +12,8 @@ type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onC
 interface InputProps extends HTMLInputProps {
     className?: string,
     theme?: InputTheme,
-    value?: string,
+	squared?:boolean
+	value?: string | number,
     onChange?: (value: string) => void
 	readonly?:boolean
 }
@@ -24,6 +26,7 @@ export const Input = memo((props: InputProps) => {
 		type='text',
 		onChange,
 		readonly,
+		squared=false,
 		disabled=false,
 		...othersProps
 	}
@@ -35,6 +38,7 @@ export const Input = memo((props: InputProps) => {
 
 	const mods:Mods = {
 		[cls.readonly]:readonly,
+		[cls.squared]:squared
 	}
 	const additional:Array<string | undefined> = [
 		className,

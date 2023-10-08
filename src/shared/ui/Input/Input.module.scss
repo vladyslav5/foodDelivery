@@ -1,12 +1,23 @@
-.Input{
+.Input {
     color: var(--secondary-color);
 }
 
-.primary{
+.primary {
     background: var(--inverted-bg-color);
 
 }
 
-.readonly{
+.squared {
+    width: 35px;
+    height: 35px;
+    text-align: center;
+}
+
+.readonly {
     background: var(--bg-color);
+}
+
+.primaryInverted {
+    background: var(--bg-color);
+    color: var(--primary-color);
 }

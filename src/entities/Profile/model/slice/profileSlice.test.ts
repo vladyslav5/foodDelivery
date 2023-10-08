@@ -65,5 +65,4 @@ describe('profileSlice test', () => {
 				validateError: undefined
 			})
 	})
-
 })

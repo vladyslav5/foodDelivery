@@ -6,13 +6,15 @@
 body{
     font: var(--font-m);
     color: var(--primary-color);
+
+    --error-color: color-mix(in srgb, var(--bg-color) 95%, red);
+    --green-color: color-mix(in srgb, var(--bg-color) 80%, green);
 }
 
 .app {
     background: var(--bg-color);
     min-height: 100vh;
 
-    //transition: 0.3s ease-in;
 }
 
 .content-page {
@@ -22,4 +24,6 @@ body{
 .page-wrapper {
     flex-grow: 1;
     padding: 15px;
+    height: calc(100vh - var(--navbar-height) );
+    overflow: auto;
 }

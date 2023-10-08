@@ -12,15 +12,15 @@ import {StoreProvider} from 'app/providers/StoreProvider'
 const root = createRoot(document.getElementById('root')!)
 
 root.render(
-/*	<StrictMode>*/
-	<ErrorBoundary>
+	<StrictMode>
 		<BrowserRouter>
 			<StoreProvider>
-				<ThemeProvider>
-					<App/>
-				</ThemeProvider>
+				<ErrorBoundary>
+					<ThemeProvider>
+						<App/>
+					</ThemeProvider>
+				</ErrorBoundary>
 			</StoreProvider>
 		</BrowserRouter>
-	</ErrorBoundary>
-/*	</StrictMode>*/
+	</StrictMode>
 )

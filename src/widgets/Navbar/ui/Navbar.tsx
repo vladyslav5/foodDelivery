@@ -9,6 +9,8 @@ import Logo from 'shared/assets/icons/logo.svg'
 import {LoginModal} from 'features/AuthByUserName'
 import {getUserAuthData} from 'entities/User'
 import {useSelector} from 'react-redux'
+import {CartModal} from 'entities/Cart'
+import {getCartProducts} from 'entities/Cart/model/selectors/getCartProducts/getCartProducts'
 
 
 
@@ -20,19 +22,28 @@ export const Navbar = ({className}: NavBarProps) => {
 	const {t} = useTranslation()
 	const [isAuthOpen,setIsAuthOpen] = useState(false)
 	const authData = useSelector(getUserAuthData)
-	const hideModal = ()=>{
+	const productsAmount = Object.keys(useSelector(getCartProducts)).length
+	const hideAuthModal = ()=>{
 		setIsAuthOpen(false)
 	}
-	const showModal = ()=>{
+	const showAuthModal = ()=>{
 		setIsAuthOpen(true)
+	}
+	const [isCartOpen,setIsCartOpen] = useState<boolean>(false)
+	const hideCartModal = ()=>{
+		setIsCartOpen(false)
+	}
+	const showCartModal = ()=>{
+		setIsCartOpen(true)
 	}
 	return (
 		<div className={classNames(cls.Navbar, {}, [className!])}>
 			{
 				isAuthOpen
 				&&
-				<LoginModal isOpen={isAuthOpen} onClose={hideModal}/>
+				<LoginModal isOpen={isAuthOpen} onClose={hideAuthModal}/>
 			}
+			<CartModal onClose={hideCartModal} isOpen={isCartOpen}/>
 			<div className={cls.links}>
 				<AppLink theme={AppLinkTheme.SECONDARY} to={AppRoutes.main} className={cls.mainLink}>{t('Main')}</AppLink>
 				<AppLink theme={AppLinkTheme.SECONDARY} to={AppRoutes.about}>{t('About')}</AppLink>
@@ -44,16 +55,17 @@ export const Navbar = ({className}: NavBarProps) => {
 					:
 					<Button
 						className={cls.authBtn}
-						onClick={showModal}
+						onClick={showAuthModal}
 						theme={ButtonTheme.CLEAR}
 					>
 						{t('auth')}
 					</Button>
 			}
-			<div className={cls.logo}>
+			<div className={cls.logo} onClick={showCartModal}>
 				<Logo/>
-				{t('names')}
+				<div className={cls.productAmount}>{productsAmount}</div>
 			</div>
+			{t('names')}
 		</div>
 	)
 }

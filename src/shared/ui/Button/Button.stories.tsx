@@ -117,3 +117,50 @@ export const DisabledDark: Story = {
 	render: (args ) => <Button {...args}/>,
 	decorators: [ThemeDecorator(Theme.DARK)]
 }
+
+export const OutlinedDashed: Story = {
+	args:{
+		theme:ButtonTheme.OUTLINE_DASHED
+	},
+	render: (args ) => <Button {...args}/>,
+}
+export const OutlinedDashedDark: Story = {
+	args:{
+		theme:ButtonTheme.OUTLINE_DASHED
+	},
+	render: (args ) => <Button {...args}/>,
+	decorators: [ThemeDecorator(Theme.DARK)]
+}
+
+export const Rounded: Story = {
+	args:{
+		rounded:true,
+		children:'<'
+	},
+	render: (args ) => <Button {...args}/>,
+}
+export const RoundedDark: Story = {
+	args:{
+		rounded:true,
+		children:'<'
+	},
+	render: (args ) => <Button {...args}/>,
+	decorators: [ThemeDecorator(Theme.DARK)]
+
+}
+export const Hover: Story = {
+	args:{
+		hover:true,
+		children:'<'
+	},
+	render: (args ) => <Button {...args}/>,
+}
+export const HoverDark: Story = {
+	args:{
+		hover:true,
+		children:'<'
+	},
+	render: (args ) => <Button {...args}/>,
+	decorators: [ThemeDecorator(Theme.DARK)]
+
+}

@@ -59,33 +59,31 @@ const LoginForm = memo((props: LoginFormProps) => {
 	}, [dispatch, onSuccess, password, username])
 	return (
 		<DynamicModuleLoader reducers={initialReducers}>
-			<>
-				<div className={classNames(cls.LoginForm, {}, [className!])}>
-					<Input
-						theme={InputTheme.PRIMARY}
-						type={'text'}
-						placeholder={t('username')}
-						onChange={onChangeUsername}
-						value={username}
-					/>
-					<Input
-						theme={InputTheme.PRIMARY}
-						type={'password'}
-						placeholder={t('password')}
-						onChange={onChangePassword}
-						value={password}
-					/>
-					<LoadingButton text={t('log in')} isLoading={isLoading} onClick={onLoginClick}/>
-				</div>
-				{
-					error && <Text
-						title={'Error'}
-						theme={TextTheme.ERROR}
-						className={cls.error}
-						text={t('Incorrect password or username')}
-					/>
-				}
-			</>
+			<div className={classNames(cls.LoginForm, {}, [className!])}>
+				<Input
+					theme={InputTheme.PRIMARY}
+					type={'text'}
+					placeholder={t('username')}
+					onChange={onChangeUsername}
+					value={username}
+				/>
+				<Input
+					theme={InputTheme.PRIMARY}
+					type={'password'}
+					placeholder={t('password')}
+					onChange={onChangePassword}
+					value={password}
+				/>
+				<LoadingButton text={t('log in')} isLoading={isLoading} onClick={onLoginClick}/>
+			</div>
+			{
+				error && <Text
+					title={'Error'}
+					theme={TextTheme.ERROR}
+					className={cls.error}
+					text={t('Incorrect password or username')}
+				/>
+			}
 		</DynamicModuleLoader>
 	)
 })

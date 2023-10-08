@@ -1,0 +1,28 @@
+.CartForm{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    max-height: 70vh;
+    overflow-y: auto;
+    overflow-x:hidden;
+    box-sizing: content-box;
+}
+
+.menu{
+    display: flex;
+}
+
+.link{
+    margin-left: auto;
+
+    span{
+        padding: 5px;
+    }
+}
+
+.totalPrice{
+    padding: 5px;
+    width: fit-content;
+    border: 1px solid var(--primary-color);
+    background-color: var(--green-color);
+}

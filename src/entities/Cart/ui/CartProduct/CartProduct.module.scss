@@ -1,0 +1,42 @@
+.CartProduct{
+    display: flex;
+    padding: 10px 30px 10px 20px;
+    border-radius: 2vmin;
+    width: fit-content;
+    background: var(--inverted-bg-color);
+}
+
+.icon{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.rating{
+    margin-right: auto;
+    padding: 5px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+}
+
+.price{
+    width: fit-content;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid var(--secondary-color);
+    background: var(--green-color);
+}
+
+.amount{
+    margin: auto;
+    display: flex;
+    gap: 20px;
+}
+
+.input{
+
+}

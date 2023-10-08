@@ -6,9 +6,7 @@ import {updateProfileData} from '../services/updateProfileData/updateProfileData
 
 const initialState: ProfileSchema = {
 	readonly: true,
-	isLoading: false,
-	error: undefined,
-	data: undefined
+	isLoading: true,
 }
 export const ProfileSlice = createSlice({
 	name: 'profile',
@@ -17,7 +15,7 @@ export const ProfileSlice = createSlice({
 		setReadonly: (state, action: PayloadAction<boolean>) => {
 			state.readonly = action.payload
 		},
-		updateProfile: (state, action: PayloadAction<Profile>) => {''
+		updateProfile: (state, action: PayloadAction<Profile>) => {
 			state.form = {
 				...state.form,
 				...action.payload

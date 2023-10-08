@@ -6,13 +6,16 @@ export enum ButtonTheme {
     CLEAR = 'clear',
     OUTLINE = 'outline',
     BACKGROUND = 'background',
-    BACKGROUND_INVERTED = 'backgroundInverted'
+    BACKGROUND_INVERTED = 'backgroundInverted',
+	OUTLINE_DASHED = 'outlineDashed'
 }
 
 export enum ButtonSize {
     L = 'size_l',
     M = 'size_m',
     XL = 'size_xl',
+    SIZE_40 = 'size_40',
+    SIZE_35 = 'size_35'
 }
 
 type ButtonProps = {
@@ -21,7 +24,9 @@ type ButtonProps = {
     children?: ReactNode;
     square?: boolean
     size?: ButtonSize
-	disabled?:boolean
+    disabled?: boolean,
+    rounded?: boolean,
+    hover?: boolean
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button: FC<ButtonProps> = props => {
@@ -30,20 +35,24 @@ const Button: FC<ButtonProps> = props => {
 		children,
 		square = false,
 		theme,
-		size = ButtonSize.M,
-		disabled,
+		size,
+		disabled = false,
+		rounded = false,
+		hover = false,
 		...otherProps
 	}
         = props
 
 	const additional = [
-        className!,
-        cls[theme!],
-        cls[size],
+		className,
+		theme && cls[theme],
+		size && cls[size],
 	]
 	const mods: Record<string, boolean> = {
 		[cls.square]: square,
-		[cls.disabled]:disabled!
+		[cls.disabled]: disabled,
+		[cls.rounded]: rounded,
+		[cls.hover]: hover
 	}
 	return (
 		<button

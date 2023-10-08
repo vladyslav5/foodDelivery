@@ -53,19 +53,19 @@ export const Edit: Story = {
 	},
 	render: (args) => <ProfileCard {...args}/>,
 }
-export const isLoading: Story = {
+export const IsLoading: Story = {
 	args:{
 		isLoading:true,
 	},
 	render: (args) => <ProfileCard {...args}/>,
 }
-export const fetchError: Story = {
+export const FetchError: Story = {
 	args:{
 		fetchError:'error fetch'
 	},
 	render: (args) => <ProfileCard {...args}/>,
 }
-export const validateErrors: Story = {
+export const ValidateErrors: Story = {
 	args:{
 		validateErrors:[
 			ValidateProfileError.SERVER_ERROR,
@@ -85,21 +85,21 @@ export const EditDark: Story = {
 	decorators:[ThemeDecorator(Theme.DARK)],
 	render: (args) => <ProfileCard {...args}/>,
 }
-export const isLoadingDark: Story = {
+export const IsLoadingDark: Story = {
 	args:{
 		isLoading:true,
 	},
 	decorators:[ThemeDecorator(Theme.DARK)],
 	render: (args) => <ProfileCard {...args}/>,
 }
-export const fetchErrorDark: Story = {
+export const FetchErrorDark: Story = {
 	args:{
 		fetchError:'error fetch'
 	},
 	decorators:[ThemeDecorator(Theme.DARK)],
 	render: (args) => <ProfileCard {...args}/>,
 }
-export const validateErrorsDark: Story = {
+export const ValidateErrorsDark: Story = {
 	args:{
 		validateErrors:[
 			ValidateProfileError.SERVER_ERROR,

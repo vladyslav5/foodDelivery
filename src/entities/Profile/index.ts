@@ -12,10 +12,12 @@ import {updateProfileData} from './model/services/updateProfileData/updateProfil
 import {ProfileLoadAvatarModal} from './ui/ProfileLoadAvatarModal/ProfileLoadAvatarModal'
 import {getProfileValidateErrors} from './model/selectors/getProfileValidateErrors/getProfileValidateErrors'
 import {ValidateProfileError} from './model/types/profile'
+import {Addresses} from 'entities/Address/ui/Addresses'
 
 export {
 	Profile,
-	ProfileSchema,}
+	ProfileSchema,
+}
 
 export {
 	ValidateProfileError,
@@ -31,5 +33,5 @@ export {
 	getProfileError,
 	getProfileData,
 	getProfileUsername,
-	getProfileIsLoading
+	getProfileIsLoading,
 }

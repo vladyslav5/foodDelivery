@@ -19,7 +19,6 @@ export const loginByUsername = createAsyncThunk<User,loginByUsernameProps, {reje
 			const response = await thunkAPI.extra.api.post<User>('/login',{
 				username,password
 			})
-			thunkAPI.extra.navigate('/about')
 			if(!response.data){
 				throw new Error()
 			}

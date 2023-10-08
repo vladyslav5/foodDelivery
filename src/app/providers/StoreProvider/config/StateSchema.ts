@@ -3,14 +3,18 @@ import {LoginSchema} from 'features/AuthByUserName'
 import {AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject} from '@reduxjs/toolkit'
 import {ProfileSchema} from 'entities/Profile'
 import {AxiosInstance} from 'axios'
-import {To} from '@remix-run/router'
-import {NavigateOptions} from 'react-router/dist/lib/context'
+import {MenuSchema} from 'entities/Menu'
+import {CartSchema} from 'entities/Cart'
+import {AddressSchema} from 'entities/Address'
 
 
 export interface StateSchema{
     user:UserSchema
+    cart:CartSchema
     loginForm?:LoginSchema
     profile?:ProfileSchema
+    menu?:MenuSchema,
+    address?:AddressSchema
 }
 export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateSchema>
@@ -26,7 +30,6 @@ export type StateSchemaKey = keyof StateSchema
 
 export interface ThunkExtraArg{
     api:AxiosInstance
-    navigate:(to: To, options?: NavigateOptions) => void
 }
 
 export interface ThunkConfig<T>{

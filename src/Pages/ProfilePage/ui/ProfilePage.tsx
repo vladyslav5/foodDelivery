@@ -16,6 +16,7 @@ import {
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import {useSelector} from 'react-redux'
 import {ProfileHeader} from './ProfileHeader/ProfileHeader'
+import {Addresses} from 'entities/Address'
 
 
 interface ProfilePageProps {
@@ -64,6 +65,7 @@ const ProfilePage = ({className}: ProfilePageProps) => {
 					onChangeLastName={onChangeLastName}
 					onChangeUsername={onChangeUsername}
 				/>
+				<Addresses/>
 			</div>
 		</DynamicModuleLoader>
 	)

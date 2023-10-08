@@ -5,14 +5,14 @@
     display: flex;
     align-items: center;
     padding: 20px;
-    color:var(--primary-color)
+    color: var(--primary-color)
 }
 
 .links {
     margin-left: 15px;
 }
 
-.authBtn{
+.authBtn {
     margin-left: 20px;
 }
 
@@ -20,11 +20,22 @@
     margin-right: 15px;
 }
 
-.logo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    color: var(--inverted-secondary-color);
+.logo {
     margin-left: auto;
+    color: var(--primary-color);
+    margin-right: 15px;
+    position: relative;
+}
+
+.productAmount {
+    color: var(--primary-color);
+    background: var(--inverted-primary-color);
+    width: 15px;
+    line-height: 15px;
+    text-align: center;
+    height: 15px;
+    border-radius: 50%;
+    right: -5px;
+    top: 0;
+    position: absolute;
 }

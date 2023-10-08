@@ -1,0 +1,44 @@
+
+.CategoryItem {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height:120px ;
+    border: 1px dashed var(--primary-color);
+    padding: 5px;
+    border-radius:  10px;
+    transition: background 0.3s ease-in;
+}
+
+.icon {
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+
+    img{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+}
+
+.CategoryItem:hover, .CategoryItem:focus {
+    background-color: var(--inverted-bg-color);
+    border: none;
+
+    //.icon {
+    //}
+}
+
+.selected {
+    background-color: var(--inverted-bg-color);
+    border: none;
+    transition: none;
+}

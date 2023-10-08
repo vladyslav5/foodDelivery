@@ -1,6 +1,7 @@
 .Button {
     cursor: pointer;
     color: var(--primary-color);
+    background: var(--inverted-bg-color);
     padding: 6px;
 }
 
@@ -28,11 +29,25 @@
     color: var(--inverted-primary-color);
 }
 
+.outlineDashed{
+    border: 1px dashed var(--primary-color);
+    color:var(--secondary-color)
+}
 .square.size_l {
     width: var(--font-line-l);
     height: var(--font-l);
     font:var(--font-l)
 
+}
+
+.square.size_40{
+    width: 40px;
+    height: 40px;
+}
+
+.square.size_35{
+    width: 35px;
+    height: 35px;
 }
 
 .square.size_m {
@@ -65,5 +80,24 @@
 }
 
 .disabled{
+    opacity: 0.5;
+}
+
+.rounded{
+    border-radius: 50%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+
+.hover{
+    transition: background-color 0.3s;
+}
+
+
+.hover:hover {
     opacity: 0.5;
 }

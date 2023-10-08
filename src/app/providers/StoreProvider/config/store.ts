@@ -2,30 +2,22 @@ import {CombinedState, configureStore, Reducer, ReducersMapObject} from '@reduxj
 import {StateSchema} from 'app/providers/StoreProvider/config/StateSchema'
 import {userReducer} from 'entities/User'
 import {createReducerManager} from 'app/providers/StoreProvider/config/reducerManager'
-import {To} from '@remix-run/router'
-import {NavigateOptions} from 'react-router/dist/lib/context'
-import axios from 'axios'
-import {USER_LOCALSTORAGE_KEY} from 'shared/config/consts/localStorage'
+import {cartReducer} from 'entities/Cart'
+import {$api} from 'shared/api/api'
 
-const api = axios.create({
-	baseURL:__API__,
-	headers:{
-		authorization:localStorage.getItem(USER_LOCALSTORAGE_KEY)
-	}
-})
+
 
 
 
 export function createReduxStore(
 	initialState?:StateSchema,
 	asyncReducers?:ReducersMapObject<StateSchema>,
-	navigate?:(to: To, options?: NavigateOptions) => void,
-
 )
 {
 	const rootReducers:ReducersMapObject<StateSchema> ={
 		...asyncReducers,
 		user:userReducer,
+		cart:cartReducer
 	}
 	const reduceManager = createReducerManager(rootReducers)
 	const store = configureStore({
@@ -35,8 +27,7 @@ export function createReduxStore(
 		middleware:getDefaultMiddleware => getDefaultMiddleware({
 			thunk:{
 				extraArgument:{
-					api: api,
-					navigate:navigate
+					api: $api,
 				}
 			}
 		})

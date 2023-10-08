@@ -1,0 +1,33 @@
+.Menu{
+    display: flex;
+    flex-direction: column;
+}
+
+.categories{
+    display: flex;
+    overflow-y: auto;
+    gap: 100px;
+}
+
+.categoriesLoading{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.products{
+    margin-top:50px;
+}
+
+.preload{
+    display: flex;
+    gap: 50px;
+    flex-wrap:wrap;
+}
+
+.error{
+    width: fit-content;
+    padding: 15px;
+    border: 1px solid red;
+    margin-bottom: 15px;
+}
