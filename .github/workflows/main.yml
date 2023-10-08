@@ -38,8 +38,3 @@ jobs:
       - name: screenshot testing
         run: npm run test:ui:ci
         if: always()
-There\'s a problem loading this page: There\'s a problem loading this page
-total price: total price
-Order Menu: Order Menu
-View All: View All
-Cart is empty: Cart is empty
