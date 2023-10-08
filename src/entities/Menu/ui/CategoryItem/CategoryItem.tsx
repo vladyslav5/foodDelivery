@@ -2,7 +2,7 @@ import {classNames, Mods} from 'shared/lib/helpers/classNames/classNames'
 import cls from './CategoryItem.module.scss'
 import {Category} from '../../model/type/menu'
 import {Text} from 'shared/ui/Text/Text'
-import {Avatar} from 'shared/ui/Avatar/ui/Avatar'
+
 
 interface CategoryProps {
     className?: string,
