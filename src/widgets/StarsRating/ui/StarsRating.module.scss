@@ -5,41 +5,23 @@
 }
 
 
-.wrapper .star {
-    color: var(--inverted-secondary-color);
+.star {
+    color: var(--primary-color);
     text-decoration: none;
-    transition: all 0.5s;
     margin: 4px;
 }
 
 
 
-.s1:hover ~ .star {
-    color: var(--primary-color);
-}
 
-.s2:hover ~ .star {
-    color: var(--primary-color);
-}
-
-.s3:hover ~ .star {
-    color: var(--primary-color);
-}
-
-.s4:hover ~ .star {
-    color: var(--primary-color);
-
-}
-
-.s5:hover ~ .star {
-    color: var(--primary-color);
-
-}
-
-.wrapper .star:hover {
-    color: var(--primary-color);
+.wrapper {
+    //color: var(--primary-color);
 
     .svg{
         transform: scale(1.5);
     };
+}
+
+.startSelected{
+    color: var(--inverted-secondary-color);
 }

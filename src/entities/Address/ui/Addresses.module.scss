@@ -1,8 +1,15 @@
 .Addresses{
     margin-top: 20px;
+
 }
 
 .addressesList{
+    display: flex;
+    flex-direction: column;
     padding: 20px;
     border: 2px solid var(--inverted-bg-color);
+}
+
+.btn{
+    margin-top: 10px;
 }

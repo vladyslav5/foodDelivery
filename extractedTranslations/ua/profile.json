@@ -1,4 +1,5 @@
 {
+  "": "",
   "Add Address": "Add Address",
   "Billy": "Billy",
   "Cancel": "Cancel",
@@ -22,5 +23,6 @@
   "drag your image here": "drag your image here",
   "drop your image here": "drop your image here",
   "not data": "not data",
+  "there is no adresses": "there is no adresses",
   "username": "username"
 }

@@ -13,6 +13,7 @@ import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import {cartActions} from '../../model/slice/cartSlice'
 import {useCallback} from 'react'
 import {ProductId} from 'entities/Product'
+import {useNavigate} from 'react-router-dom'
 
 interface CartFormProps {
     className?: string,
@@ -26,7 +27,7 @@ const CartForm = ({className, onHide}: CartFormProps) => {
 		.map(([, cartProduct]) => cartProduct)
 		.reduce((sum, {product, amount}) => sum + product.price * amount, 0)
 	const {t} = useTranslation('main')
-
+	const navigate = useNavigate()
 	const dispatch = useAppDispatch()
 	const incrementProduct = useCallback((productId: ProductId) => {
 		dispatch(cartActions.incrementProduct(productId))
@@ -44,6 +45,9 @@ const CartForm = ({className, onHide}: CartFormProps) => {
 		return <div className={classNames(cls.CartForm, {}, [className!])}>
 			<Text title={t('Cart is empty')}/>
 		</div>
+	}
+	const submit = ()=>{
+		navigate(AppRoutes.order)
 	}
 	return (
 		<div className={classNames(cls.CartForm, {}, [className!])}>
@@ -66,7 +70,7 @@ const CartForm = ({className, onHide}: CartFormProps) => {
 					/>)
 			}
 			<Text className={cls.totalPrice} theme={TextTheme.SECONDARY} text={` total price - ${totalPrice}$`}/>
-			<Button>{t('Proceed to checkout')}</Button>
+			<Button onClick={submit}>{t('Proceed to checkout')}</Button>
 		</div>
 	)
 }

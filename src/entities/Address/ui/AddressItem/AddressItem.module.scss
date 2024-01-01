@@ -1,0 +1,17 @@
+.AddressItem{
+    margin-top:10px;
+    display: flex;
+    border: 2px dashed var(--inverted-bg-color);
+    padding: 5px;
+    flex-direction: column;
+    transition: transform 2s ease;
+}
+
+.btn{
+    display: flex;
+    gap:5px;
+}
+
+.remove{
+    transform: translateX(-100vw);
+}

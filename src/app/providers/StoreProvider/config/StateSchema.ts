@@ -1,11 +1,14 @@
 import {UserSchema} from 'entities/User'
 import {LoginSchema} from 'features/AuthByUserName'
-import {AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject} from '@reduxjs/toolkit'
 import {ProfileSchema} from 'entities/Profile'
 import {AxiosInstance} from 'axios'
 import {MenuSchema} from 'entities/Menu'
 import {CartSchema} from 'entities/Cart'
 import {AddressSchema} from 'entities/Address'
+import {OrderProductSchema} from 'features/OrderProduct'
+import {AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject} from '@reduxjs/toolkit'
+import {OrderSchema} from 'entities/Order'
+import {registrationSchema} from 'features/RegByNumber'
 
 
 export interface StateSchema{
@@ -14,7 +17,10 @@ export interface StateSchema{
     loginForm?:LoginSchema
     profile?:ProfileSchema
     menu?:MenuSchema,
-    address?:AddressSchema
+    address?:AddressSchema,
+    orderProduct?:OrderProductSchema
+    order?:OrderSchema,
+    registrationForm?:registrationSchema
 }
 export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateSchema>

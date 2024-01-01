@@ -26,20 +26,10 @@ export const ProductCard = (props: ProductCardProps) => {
 	}
 	return (
 		<div className={classNames(cls.ProductCard, {}, [className!])}>
-			<Button
-				className={cls.favorite_btn}
-				square
-				hover
-				rounded
-				theme={ButtonTheme.CLEAR}
-			>
-				{/* eslint-disable-next-line i18next/no-literal-string */}
-				<span className={cls.favorite}>&#9825;</span>
-			</Button>
 			<img className={cls.icon} src={product.icon}/>
 			<Text text={product.name}/>
 			<div className={cls.rating}>
-				<StarsRating/>
+				<StarsRating rating={product.rating}/>
 			</div>
 			<div className={cls.price}>
 				{product.price}$

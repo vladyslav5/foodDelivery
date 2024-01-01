@@ -1,4 +1,4 @@
-import React, {memo, useCallback, useEffect} from 'react'
+import React, {memo, useCallback} from 'react'
 import {classNames} from 'shared/lib/helpers/classNames/classNames'
 import cls from './LoginForm.module.scss'
 import {useTranslation} from 'react-i18next'
@@ -17,6 +17,8 @@ import {getLoginError} from '../../model/selectors/getLoginState/getLoginError/g
 import {getLoginIsLoading} from '../../model/selectors/getLoginState/getLoginIsLoading/getLoginIsLoading'
 import {DynamicModuleLoader, ReducerList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import {AppLink} from 'shared/ui/AppLink/AppLink'
+import {AppRoutes} from 'shared/config/routeConfig/routeConfig'
 
 
 interface LoginFormProps {
@@ -84,6 +86,7 @@ const LoginForm = memo((props: LoginFormProps) => {
 					text={t('Incorrect password or username')}
 				/>
 			}
+			<AppLink to={AppRoutes.registration}>{t('Don\'t have account yet  ? Sign in')}</AppLink>
 		</DynamicModuleLoader>
 	)
 })

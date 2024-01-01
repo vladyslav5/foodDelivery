@@ -1,25 +1,18 @@
 import React, {useState} from 'react'
 import {useTranslation} from 'react-i18next'
-import Button, {ButtonTheme} from 'shared/ui/Button/Button'
 import {SliderButton} from 'shared/ui/SliderButton/SliderButton'
 import cls from './AboutPage.module.scss'
 import {classNames} from 'shared/lib/helpers/classNames/classNames'
+import {OrderProduct} from 'features/OrderProduct'
+import {Modal} from 'shared/ui/Modal/Modal'
 
 const AboutPage = () => {
 	const {t} = useTranslation('about')
 	const [f, setF] = useState(false)
 	return (
 		<div>
-			{t('about us')}
-			<Button
-				theme={ButtonTheme.BACKGROUND_INVERTED}
-				onClick={() => {
-					throw new Error('er')
-				// eslint-disable-next-line i18next/no-literal-string
-				}}>
-                bug
-			</Button>
-			<SliderButton className={classNames(cls.scaleSlider)} checked={f} onClick={()=>setF(prevState => !prevState)}/>
+			<SliderButton className={classNames(cls.scaleSlider)} checked={f}
+				onClick={() => setF(prevState => !prevState)}/>
 		</div>
 	)
 }

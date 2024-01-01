@@ -17,6 +17,7 @@ import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import {useSelector} from 'react-redux'
 import {ProfileHeader} from './ProfileHeader/ProfileHeader'
 import {Addresses} from 'entities/Address'
+import {addressReducer} from 'entities/Address'
 
 
 interface ProfilePageProps {
@@ -24,7 +25,8 @@ interface ProfilePageProps {
 }
 
 const reducers: ReducerList = {
-	profile: profileReducer
+	profile: profileReducer,
+	address:addressReducer
 }
 const ProfilePage = ({className}: ProfilePageProps) => {
 	const dispatch = useAppDispatch()

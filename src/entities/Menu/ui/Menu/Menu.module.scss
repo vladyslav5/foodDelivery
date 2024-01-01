@@ -1,12 +1,23 @@
 .Menu{
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .categories{
-    display: flex;
-    overflow-y: auto;
-    gap: 100px;
+    flex: 1;
+    height:120px ;
+    display: grid;
+    grid-auto-flow:column;
+    grid-gap: 100px;
+    grid-template-columns: 100px repeat(auto-fill,100px);
+    overflow-x: auto;
+}
+
+@media screen and ( width<=600px) {
+    .categories{
+        grid-gap: 50px;
+    }
 }
 
 .categoriesLoading{
@@ -18,11 +29,12 @@
 .products{
     margin-top:50px;
 }
-
 .preload{
-    display: flex;
+    margin-top:50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr)) ;
+    place-items: center;
     gap: 50px;
-    flex-wrap:wrap;
 }
 
 .error{

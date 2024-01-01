@@ -1,7 +1,7 @@
 {
   "hello":"hello",
   "translate": "translate",
-  "language": "Ukrainian",
+  "language": "language",
   "About": "About",
   "Main": "Main",
   "names": "FoodDelivery",
@@ -16,5 +16,11 @@
   "password": "password",
   "Incorrect password or username": "Incorrect password or username",
   "log out": "log out",
-  "Profile": "Profile"
+  "Profile": "Profile",
+  "Orders": "Orders",
+  "Cancel": "Cancel",
+  "phoneNumber": "phoneNumber",
+  "sign up": "sign up",
+  "username already in use": "username already in use",
+  "username is invalid": "username is invalid"
 }

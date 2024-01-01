@@ -1,5 +1,3 @@
-
-
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 import {CartSchema, CartType} from '../type/cart'
 import {ProductId} from 'entities/Product'
@@ -17,6 +15,9 @@ export const CartSlice = createSlice({
 				...state.products,
 				...action.payload
 			}
+		},
+		reset:(state)=>{
+			state.products = {}
 		},
 		incrementProduct:(state, action:PayloadAction<ProductId>)=>{
 			state.products[action.payload].amount++

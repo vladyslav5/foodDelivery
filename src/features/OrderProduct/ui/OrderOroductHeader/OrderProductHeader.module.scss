@@ -1,0 +1,22 @@
+.OrderProductHeader{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+.line{
+    position: absolute;
+    width: 100%;
+    top:40px;
+    border: 2px dashed;
+    z-index: 0;
+}
+
+.icon{
+    z-index: 1;
+    transition: border 1s ease-out;
+}
+
+.selected{
+    border-bottom: 2px var(--primary-color) solid;
+}

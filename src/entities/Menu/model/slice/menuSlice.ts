@@ -1,16 +1,13 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 import {Category, MenuSchema} from '../type/menu'
-import {fetchCategories} from 'entities/Menu/model/services/fetchCategories/fetchCategories'
-import {
-	fetchProductsByCategoryId
-} from 'entities/Menu/model/services/fetchProductsByCategoryId/fetchProductsByCategoryId'
+import {fetchCategories} from '.././services/fetchCategories/fetchCategories'
+import {fetchProductsByCategoryId} from '.././services/fetchProductsByCategoryId/fetchProductsByCategoryId'
 import {Product} from 'entities/Product'
 
 
 
 const initialState: MenuSchema = {
 	categories:[],
-	basket:[],
 	products:[],
 	isLoadingCategories:false,
 	isLoadingProducts:false

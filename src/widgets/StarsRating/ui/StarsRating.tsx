@@ -4,27 +4,18 @@ import Star from 'shared/assets/icons/star.svg'
 
 interface StarsRatingProps {
     className?: string
+	rating:number
 }
 
-export const StarsRating = ({className}: StarsRatingProps) => {
+export const StarsRating = ({className,rating}: StarsRatingProps) => {
 	return (
 		<div className={classNames(cls.StarsRating, {}, [className!])}>
 			<div className={cls.wrapper}>
-				<span className={classNames(cls.s1, {}, [cls.star])}>
-					<Star className={cls.svg}/>
-				</span>
-				<span className={classNames(cls.s2, {}, [cls.star])}>
-					<Star className={cls.svg}/>
-				</span>
-				<span className={classNames(cls.s3, {}, [cls.star])}>
-					<Star className={cls.svg}/>
-				</span>
-				<span className={classNames(cls.s4, {}, [cls.star])}>
-					<Star className={cls.svg}/>
-				</span>
-				<span className={classNames(cls.s5, {}, [cls.star])}>
-					<Star className={cls.svg}/>
-				</span>
+				{
+					[...Array(5)].map((elm,i)=><span className={classNames(cls.star, {[cls.startSelected]:rating>=i+1}, [])} key={i}>
+						<Star className={cls.svg}/>
+					</span>)
+				}
 			</div>
 		</div>
 	)

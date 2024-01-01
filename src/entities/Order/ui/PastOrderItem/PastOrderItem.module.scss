@@ -1,0 +1,24 @@
+.PastOrderItem{
+    border: 2px solid var(--primary-color);
+    padding: 15px;
+    width: 100%;
+}
+
+.icon{
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+}
+
+.price{
+    border:0.5px solid var(--primary-color);
+    background: var(--green-color);
+}
+
+.product{
+    margin: 5px 0;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    border: 1px dashed var(--secondary-color);
+}

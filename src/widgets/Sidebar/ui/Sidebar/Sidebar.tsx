@@ -11,7 +11,9 @@ import {getUserAuthData, userAction} from 'entities/User'
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import ProfileIcon from 'shared/assets/icons/ProfileIcon.svg'
 import LogoutIcon from 'shared/assets/icons/LogoutIcon.svg'
+import Orders from 'shared/assets/icons/Orders.svg'
 import {useSelector} from 'react-redux'
+import {useNavigate} from 'react-router-dom'
 
 
 type SidebarProps = {
@@ -24,11 +26,13 @@ export const Sidebar = memo(({className}: SidebarProps) => {
 	const onToggle = () => {
 		setCollapsed(prevState => !prevState)
 	}
+	const navigate = useNavigate()
 	const authData = useSelector(getUserAuthData)
 	const dispatch = useAppDispatch()
 	const onLogout = useCallback(() => {
+		navigate(AppRoutes.main)
 		dispatch(userAction.logout())
-	}, [dispatch])
+	}, [dispatch, navigate])
 	const mods: Mods = {
 		[cls.collapsed]: collapsed,
 	}
@@ -48,29 +52,44 @@ export const Sidebar = memo(({className}: SidebarProps) => {
 				{collapsed ? '>' : '<'}
 			</Button>
 			<LangSwitcher short={collapsed}/>
-			<AppLink
-				className={cls.item}
-				to={AppRoutes.profile}
-			>
-				<ProfileIcon className={cls.icon}/>
-				<span
-					className={cls.link}
+			{authData &&
+			<>
+				<AppLink
+					className={cls.item}
+					to={AppRoutes.profile}
 				>
-					{t('Profile')}
-				</span>
-			</AppLink>
-			{authData && <Button
-				className={classNames(cls.logout, {}, [cls.item])}
-				onClick={onLogout}
-				theme={ButtonTheme.CLEAR}
-			>
-				<LogoutIcon className={cls.icon}/>
-				<span
-					className={cls.link}
+					<ProfileIcon className={cls.icon}/>
+					<span
+						className={cls.link}
+					>
+						{t('Profile')}
+					</span>
+				</AppLink>
+				<AppLink
+					className={cls.item}
+					to={AppRoutes.orders}
 				>
-					{t('log out')}
-				</span>
-			</Button>}
+					<Orders className={cls.icon}/>
+					<span
+						className={cls.link}
+					>
+						{t('Orders')}
+					</span>
+				</AppLink>
+				<Button
+					className={classNames(cls.logout, {}, [cls.item])}
+					onClick={onLogout}
+					theme={ButtonTheme.CLEAR}
+				>
+					<LogoutIcon className={cls.icon}/>
+					<span
+						className={cls.link}
+					>
+						{t('log out')}
+					</span>
+				</Button>
+			</>
+			}
 		</div>
 	)
 })

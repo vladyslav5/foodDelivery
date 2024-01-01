@@ -8,6 +8,7 @@ import Delete from 'shared/assets/icons/delete.svg'
 import {Input, InputTheme} from 'shared/ui/Input/Input'
 import {CartItem} from '../../model/type/cart'
 import {ProductId} from 'entities/Product'
+import {useState} from 'react'
 
 interface CartProductProps {
     className?: string
@@ -27,11 +28,17 @@ export const CartProduct = (props: CartProductProps) => {
 		remove,
 		decrement
 	} = props
+	const [removing,setRemoving]= useState(false)
 	const {product,amount} = cartItem
 	const isMinusDisabled = amount<=1
-
+	const removeHandler = ()=>{
+		setRemoving(true)
+		setTimeout(()=>{
+			remove(productId)
+		},1100)
+	}
 	return (
-		<div className={classNames(cls.CartProduct, {}, [className!])}>
+		<div className={classNames(cls.CartProduct, {[cls.remove]:removing}, [className!])}>
 			<img className={cls.icon} src={product.icon}/>
 			<div className={cls.content}>
 				<Text align={TextAlign.CENTER} text={product.name}/>
@@ -54,7 +61,6 @@ export const CartProduct = (props: CartProductProps) => {
 						theme={InputTheme.PRIMARY_INVERTED}
 						value={amount}
 						squared
-						onInput={()=>{}}
 						type={'text'}
 					/>
 					<Button
@@ -75,7 +81,7 @@ export const CartProduct = (props: CartProductProps) => {
 						className={cls.btn}
 						size={ButtonSize.SIZE_40}
 						hover
-						onClick={()=>remove(productId)}
+						onClick={removeHandler}
 					>
 						<Delete width={'40px'} height={'40px'} />
 					</Button>

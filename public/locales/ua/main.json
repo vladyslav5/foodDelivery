@@ -1,8 +1,9 @@
 {
   "Main page": "Головна сторінка",
-  "There\'s a problem loading this page": "There\\'s a problem loading this page",
-  "total price": "total price",
-  "Order Menu": "Order Menu",
-  "View All": "View All",
-  "Cart is empty": "Cart is empty"
+  "Theres a problem loading this page": "Виникла проблема при завантаженні цієї сторінки",
+  "total price": "загальна вартість",
+  "Order Menu": "Меню замовлення",
+  "View All": "Переглянути все",
+  "Cart is empty": "Кошик порожній",
+  "Order now and get free delivery": "Замовте зараз і отримайте безкоштовну доставку"
 }

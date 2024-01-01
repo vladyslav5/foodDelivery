@@ -2,6 +2,8 @@ import React, {memo} from 'react'
 import {classNames} from 'shared/lib/helpers/classNames/classNames'
 import {useTranslation} from 'react-i18next'
 import Button, {ButtonSize, ButtonTheme} from 'shared/ui/Button/Button'
+import {Text, TextAlign, TextSize, TextTheme} from 'shared/ui/Text/Text'
+import cls from './LangSwitcher.module.scss'
 
 type LangSwitcherProps = {
     className?: string;
@@ -16,10 +18,8 @@ export const LangSwitcher = memo(({className, short}: LangSwitcherProps) => {
 	}
 	return (
 		<Button
-			className={classNames(' ', {}, [className!])}
+			className={classNames(cls.LangSwitcher, {}, [className!])}
 			theme={ButtonTheme.CLEAR}
-			// style={{border:'1px solid red'}}
-			square={short}
 			onClick={toggle}
 			size={short ? ButtonSize.L : ButtonSize.M}
 		>
@@ -28,7 +28,10 @@ export const LangSwitcher = memo(({className, short}: LangSwitcherProps) => {
 					?
 					t('lang')
 					:
-					t('language')
+					<div className={cls.long}>
+						<Text theme={TextTheme.SECONDARY} text={t('lang')} align={TextAlign.CENTER} fontSize={TextSize.L}/>
+						<span>{t('language')}</span>
+					</div>
 			}
 		</Button>
 	)

@@ -18,7 +18,7 @@ export enum ButtonSize {
     SIZE_35 = 'size_35'
 }
 
-type ButtonProps = {
+export type ButtonProps = {
     className?: string;
     theme?: ButtonTheme;
     children?: ReactNode;

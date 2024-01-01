@@ -1,0 +1,15 @@
+.LangSwitcher {
+
+}
+
+.long {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+
+    span{
+        flex-basis: 50%;
+    }
+
+}

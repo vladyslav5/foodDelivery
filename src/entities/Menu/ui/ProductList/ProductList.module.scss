@@ -1,5 +1,6 @@
 .ProductList{
-    display: flex;
+    display: grid;
+    grid-template-columns: /*200px*/ repeat(auto-fill,minmax(200px,1fr)) ;
+    place-items: center;
     gap: 50px;
-    flex-wrap: wrap;
 }

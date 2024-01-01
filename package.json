@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "start": "concurrently \"npx webpack serve --env port=3000\" \"nodemon ./json-server/index.js\" ",
     "dev:wp": "npx webpack serve --env port=3000",
     "build:wp": "npx webpack  --env mode=production",
-    "start": "vite serve",
     "start:dev:server": "nodemon ./json-server/index.js",
     "lint:ts": "eslint **/*.{ts,tsx}",
     "lint:ts:fix": "eslint **/*.{ts,tsx} --fix",
@@ -78,6 +78,7 @@
     "sass": "^1.63.6",
     "sass-loader": "^13.3.2",
     "storybook": "7.2.3",
+    "stripe": "^13.10.0",
     "style-loader": "^3.3.3",
     "stylelint": "^15.10.2",
     "stylelint-config-standard-scss": "^10.0.0",
@@ -92,6 +93,8 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
+    "@stripe/react-stripe-js": "^2.3.1",
+    "@stripe/stripe-js": "^2.1.7",
     "axios": "^1.4.0",
     "i18next": "^23.2.11",
     "i18next-browser-languagedetector": "^7.1.0",
