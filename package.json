@@ -1,8 +1,11 @@
 {
   "name": "fooddelivery",
+  "homepage": "https://vladyslav5.github.io/foodDelivery",
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "predeploy": "",
+    "deploy": "gh-pages -d dist",
     "start": "concurrently \"npx webpack serve --env port=3000\" \"nodemon ./json-server/index.js\" ",
     "dev:wp": "npx webpack serve --env port=3000",
     "build:wp": "npx webpack  --env mode=production",
@@ -96,6 +99,7 @@
     "@stripe/react-stripe-js": "^2.3.1",
     "@stripe/stripe-js": "^2.1.7",
     "axios": "^1.4.0",
+    "gh-pages": "^6.1.1",
     "i18next": "^23.2.11",
     "i18next-browser-languagedetector": "^7.1.0",
     "i18next-http-backend": "^2.2.1",
