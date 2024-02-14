@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfooddelivery=self.webpackChunkfooddelivery||[]).push([[871],{2871:(e,s,r)=>{r.r(s),r.d(s,{default:()=>n}),r(7294);var a=r(7300);const c={};var d=r(78),l=r(5893);const n=function(e){var s=e.className;return(0,l.jsx)("div",{className:(0,a.A)(c.OrderPage,{},[s]),children:(0,l.jsx)(d.U,{})})}}}]);

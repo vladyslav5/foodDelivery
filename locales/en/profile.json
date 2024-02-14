@@ -1,0 +1,22 @@
+{
+  "Profile": "Profile",
+  "Edit": "Edit",
+  "username": "username",
+  "Vasya": "Vasya",
+  "Last name": "Last name",
+  "First name": "First name",
+  "Username": "Username",
+  "John": "John",
+  "Cancel": "Cancel",
+  "Save": "Save",
+  "Change avatar": "Change avatar",
+  "drag your image here": "drag your image here or click",
+  "drop your image here": "drop your image here",
+  "Server Error": "Server Error",
+  "Incorrect user data": "Incorrect user data",
+  "not data": "not data",
+  "Incorrect user image": "Incorrect user image",
+  "Your Addresses": "Your Addresses",
+  "Add Address": "Add Address",
+  "there is no adresses": "there is no adresses"
+}

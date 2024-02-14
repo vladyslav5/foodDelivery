@@ -1,0 +1,22 @@
+{
+  "Profile": "Профіль",
+  "Edit": "Редагувати",
+  "username": "ім'я користувача",
+  "Vasya": "Вася",
+  "Last name": "Прізвище",
+  "First name": "Ім'я",
+  "Username": "Ім'я користувача",
+  "John": "Джон",
+  "Cancel": "Скасувати",
+  "Save": "Зберегти",
+  "Change avatar": "Змінити аватар",
+  "drag your image here": "перетягніть ваше зображення сюди або натисніть",
+  "drop your image here": "розмістіть ваше зображення тут",
+  "Server Error": "Помилка сервера",
+  "Incorrect user data": "Невірні дані користувача",
+  "not data": "немає даних",
+  "Incorrect user image": "Невірне зображення користувача",
+  "Your Addresses": "Ваші адреси",
+  "Add Address": "Додати адресу",
+  "there is no adresses": "немає адрес"
+}
